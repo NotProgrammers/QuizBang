@@ -22,7 +22,7 @@ namespace QuizBang.Controllers
             string message = "Bang - " + DateTime.Now.ToString();
 
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<QuizHub>();
-            hubContext.Clients.All.broadcastMessage("0123456789", "test message " + DateTime.Now.ToLongTimeString());
+            hubContext.Clients.All.broadcastMessage("0123456789", DateTime.Now.ToLongTimeString());
 
             return Content(message);
         }
