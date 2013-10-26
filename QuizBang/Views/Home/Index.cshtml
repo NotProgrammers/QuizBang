@@ -10,10 +10,6 @@
     <div id="canvasBubbles"></div>
 
     <div id="messageBox">
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
-        <div>Test</div>
     </div>
     <div id="outer">
         <div id="container">
@@ -57,20 +53,20 @@
     <script src="~/Scripts/messagehandler.js" type="text/javascript"></script>
     <script>
 
-        $("body").click(function () {
+        //$("body").click(function () {
 
-            bubblesMain(new Object({
-                type: 'linear',
-                revolve: 'center',
-                minSpeed: 100,
-                maxSpeed: 500,
-                minSize: 50,
-                maxSize: 150,
-                num: 100,
-                colors: new Array('#FFFFFF', '#BBBBBB')
-            }));
-            cycleBackgroundColors();
-        });
+        //    bubblesMain(new Object({
+        //        type: 'linear',
+        //        revolve: 'center',
+        //        minSpeed: 100,
+        //        maxSpeed: 500,
+        //        minSize: 50,
+        //        maxSize: 150,
+        //        num: 100,
+        //        colors: new Array('#FFFFFF', '#BBBBBB')
+        //    }));
+        //    cycleBackgroundColors();
+        //});
 
         function cycleBackgroundColors() {
             var colors = ["green", "yellow", "red", "purple", "blue"];
@@ -84,8 +80,8 @@
         var xcenter = $(window).width() / 2;
         var ycenter = $(window).height() / 2;
 
-        var angles = [0, 60, 120, 180, 240, 300];
-        
+        var angles = [];
+
         function orbit() {
             var index = 0;
             $("#messageBox div").each(function () {
@@ -106,9 +102,19 @@
                 index++;
             });
         }
+        
+        function distributeUsers() {
+            var numberOfUsers = $("#messageBox div").length;
+            var interval = 360 / numberOfUsers;
+            angles = [0];
+            for (var i = 1; i < numberOfUsers; i++) {
+                angles.push(angles[angles.length-1] + interval);
+            }
+            orbit();
+        }
 
         $(function () {
-            orbit();
+            distributeUsers();
         });
     </script>
 </body>
