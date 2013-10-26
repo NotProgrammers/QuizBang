@@ -1,3 +1,4 @@
+
 /* mac hide \*/
 html, body {
     height: 100%;
@@ -79,7 +80,7 @@ body.started {
 }
 
 #messageBox li.received {
-    background-color: lightgreen;
+    background-color:lightseagreen;
 
 }
 

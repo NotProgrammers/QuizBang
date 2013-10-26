@@ -23,6 +23,7 @@
                     <h2>Text your name to (number) to enter</h2>
                     <p id="startInstructions" style="display: none;">Press any key to start quiz!</p>
                 </div>
+                <input type="hidden" id="answer" />
                 <div id="question" class="centred-content" style="display: none;">
                     <h2 id="question-text">What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
                     <div id="answers">
@@ -54,16 +55,6 @@
     <script src="~/Scripts/quizbang.js" type="text/javascript"></script>
     <script src="~/Scripts/messagehandler.js" type="text/javascript"></script>
     <script>
-        bubblesMain(new Object({
-            type: 'radial',
-            revolve: 'center',
-            minSpeed: 100,
-            maxSpeed: 500,
-            minSize: 50,
-            maxSize: 150,
-            num: 100,
-            colors: new Array('#FFFFFF', '#BBBBBB')
-        }));
 
         $("body").click(function () {
 
@@ -87,7 +78,7 @@
                 $("body").animate({ backgroundColor: colors[i++ % colors.length] }, 200, cycleBackgroundColors);
             }
         }
-        
+
         var angle = 0;
         var xcenter = $(window).width() / 2;
         var ycenter = $(window).height() / 2;
@@ -96,19 +87,19 @@
             angle += 0.02;
 
             var r = 380;
-            
+
             var newLeft = Math.floor(xcenter + (r * Math.cos(angle))) - 75;
             var newTop = Math.floor(ycenter + (r * Math.sin(angle)) * 0.75) - 75;
 
             $("#messageBox div").animate({
                 top: newTop,
                 left: newLeft,
-            }, 1, function() {
+            }, 1, function () {
                 orbit();
             });
         }
 
-        $(function() {
+        $(function () {
             orbit();
         });
     </script>

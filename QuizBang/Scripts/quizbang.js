@@ -15,8 +15,9 @@ function nextQuestion() {
     $('#question').show();
     var question = new QuestionSelector().getNext();
     $('#question-text').html(question.question);
-    $('#answer-a').html(question.answer1);
-    $('#answer-b').html(question.answer2);
-    $('#answer-c').html(question.answer3);
-    $('#answer-d').html(question.answer4);
+    $('#answer-a').html(question.answerA);
+    $('#answer-b').html(question.answerB);
+    $('#answer-c').html(question.answerC);
+    $('#answer-d').html(question.answerD);
+    $('#answer').val(question.correct_answer);
 }
