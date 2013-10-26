@@ -17,6 +17,7 @@
                     <div class="centred-content">
                         <h1>QuizBang!</h1>
                         <h2>Text your name to (number) to enter</h2>
+                        <p id="startInstructions" style="display:none;">Press any key to start quiz!</p>
                     </div>
                 </div>
             </div>
@@ -28,6 +29,7 @@
         <script type="text/javascript">
             $(function () {
                 var quiz = $.connection.quizHub;
+                var quizMode = 'REGISTRATION';
                 var questionSelector = new QuestionSelector();
                 
                 quiz.client.broadcastMessage = function (from, message) {
@@ -37,8 +39,18 @@
                     }
                     else {
                         $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
+
+                        if ($('#messageBox li').length > 1) {
+                            $('#startInstructions').show();
+                        }
+                            
                     }
                 };
+
+                $(document).keypress(function(e) {
+                    quizMode = 'QUIZ';
+                    $('.centred-content').html(questionSelector.getNext().question);
+                });
 
                 $.connection.hub.start();
             });
