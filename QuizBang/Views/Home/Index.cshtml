@@ -6,6 +6,8 @@
     <title>QuizBang!</title>
 </head>
 <body>
+    <ul id="messageBox">
+    </ul>
     <div id="outer">
         <div id="container">
             <div id="inner">
@@ -16,8 +18,7 @@
             </div>
         </div>
     </div>
-    <ul id="messageBox">
-    </ul>
+
 
     <script src="Scripts/jquery-1.6.4.min.js"></script>
     <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
@@ -25,8 +26,8 @@
     <script type="text/javascript">
         $(function () {
             var quiz = $.connection.quizHub;
-            quiz.client.broadcastMessage = function (message) {
-                var encodedMsg = $('<div />').text(message).html();
+            quiz.client.broadcastMessage = function (from, message) {
+                var encodedMsg = $('<div />').text(from + ' ' + message).html();
                 $('#messageBox').append('<li>' + encodedMsg + '</li>');
             };
 
