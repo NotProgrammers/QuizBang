@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test console</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+        function registerTestUser(mobile, name) {
+            $.get("/InboundSMS/SMSReceived", { from: mobile, content: name });
+        }
+
+        function registerTestUsers() {
+            var testUsers = [
+                {
+                    mobile: "07875111111",
+                    name: "Alex"
+                },
+                {
+                    mobile: "07875111112",
+                    name: "Pat Butcher"
+                },
+                {
+                    mobile: "07875111113",
+                    name: "Alex"
+                },
+                {
+                    mobile: "07875111114",
+                    name: "Pat Butcher"
+                },
+                {
+                    mobile: "07875111115",
+                    name: "Alex"
+                }
+            ];
+            testUsers.forEach(function(testUser) {
+                registerTestUser(testUser.mobile, testUser.name);
+                console.log("Registered:" + testUser.mobile + " " + testUser.name);
+            });
+        }
+
+        $(document).ready(function() {
+            console.log("document loaded");
+            $('#register-test-users').click(function() {
+                registerTestUsers();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Register test users</legend>
+            <div>Register 10 test users</div>
+            <input id="register-test-users" type="button" value="Register users"/>
+        </fieldset>
+    </div>
+</body>
+</html>
