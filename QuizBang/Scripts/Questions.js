@@ -1,4 +1,13 @@
-﻿var questions = [
+﻿var questionGenerator = new QuestionGenerator();
+
+function QuestionGenerator() {
+    this.nextQuestion = function() {
+        var questionIndex = Math.floor(Math.random() * questions.length) + 1;
+        return questions[questionIndex];
+    };
+}
+
+var questions = [
     {
         question: 'How big is your momma?',
         answer1: 'Tiny',
