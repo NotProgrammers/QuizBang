@@ -5,9 +5,9 @@
             $('#' + from).html(message);
         }
         else {
-            $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
+            $('#messageBox').append('<div id="' + from + '">' + message + '</div>');
 
-            if ($('#messageBox li').length > 1) {
+            if ($('#messageBox div').length > 1) {
                 $('#startInstructions').show();
             }
         }
