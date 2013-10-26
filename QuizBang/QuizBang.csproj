@@ -144,6 +144,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\bubbles.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.signalR-2.0.0.js" />
