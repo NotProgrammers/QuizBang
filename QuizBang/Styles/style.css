@@ -14,7 +14,7 @@ body {
     background-color: lightblue;
     text-align: center;
     min-height: 400px; /* for good browsers*/
-    min-width: 400px; /* for good browsers*/
+    min-width: 600px; /* for good browsers*/
 }
 
 #outer {
@@ -33,7 +33,7 @@ body {
 }
 
 #inner {
-    width: 400px;
+    width: 600px;
     height: 400px;
     text-align: center;
     margin-left: auto;
@@ -41,9 +41,9 @@ body {
 
     background-color: white;
     border: 1px solid silver;
-    -webkit-border-radius: 200px;
-    -moz-border-radius: 200px;
-    border-radius: 200px;
+    -webkit-border-radius: 300px / 200px;
+    -moz-border-radius: 300px / 200px;
+    border-radius: 300px / 200px;
 
     display: table;
 }
