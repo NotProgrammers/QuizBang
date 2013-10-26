@@ -8,9 +8,6 @@ namespace QuizBang
 {
     public class QuizHub : Hub
     {
-        public void Test()
-        {
-            Clients.All.broadcastMessage();
-        }
+       
     }
 }
