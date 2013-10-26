@@ -13,8 +13,6 @@
         }
     }
     else if (window.quizMode == 'QUIZ') {
-        alert(from + ' said ' + message);
-    } else {
-        throw ('Unknown quiz mode');
-    }
+        $('#' + from).addClass('received');
+    } 
 }

@@ -78,6 +78,11 @@ body.started {
     margin: 30px 0 0 0;
 }
 
+#messageBox li.received {
+    background-color: lightgreen;
+
+}
+
 #answers ul.left {
     float: left;
     margin-left: 20px;
