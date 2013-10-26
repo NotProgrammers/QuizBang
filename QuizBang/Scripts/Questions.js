@@ -1,7 +1,12 @@
 ﻿function QuestionSelector() {
     this.getNext = function() {
-        var questionIndex = Math.floor(Math.random() * questions.length) + 1;
-        return questions[questionIndex];
+        if (questions.length === 0) {
+            throw ('No more questions');
+        }
+        var questionIndex = Math.floor(Math.random() * questions.length);
+        var question = questions[questionIndex];
+        questions.splice(questionIndex, 1);
+        return question;
     };
 }
 
