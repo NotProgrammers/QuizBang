@@ -92,19 +92,26 @@
         var xcenter = $(window).width() / 2;
         var ycenter = $(window).height() / 2;
 
+        var angles = [0, 60, 120, 180, 240, 300];
+        
         function orbit() {
-            angle += 0.02;
+            var index = 0;
+            $("#messageBox div").each(function () {
+                angles[index] += 0.005;
 
-            var r = 380;
-            
-            var newLeft = Math.floor(xcenter + (r * Math.cos(angle))) - 75;
-            var newTop = Math.floor(ycenter + (r * Math.sin(angle)) * 0.75) - 75;
+                var r = 380;
 
-            $("#messageBox div").animate({
-                top: newTop,
-                left: newLeft,
-            }, 1, function() {
-                orbit();
+                var newLeft = Math.floor(xcenter + (r * Math.cos(angles[index]))) - 75;
+                var newTop = Math.floor(ycenter + (r * Math.sin(angles[index])) * 0.75) - 75;
+
+                $(this).animate({
+                        top: newTop,
+                        left: newLeft,
+                    }, 1, function() {
+                        orbit();
+                    });
+
+                index++;
             });
         }
 
