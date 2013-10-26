@@ -113,7 +113,7 @@ var questions = [
         answer1: 'What?',
         answer2: 'Who?',
         answer3: 'Eh?',
-        answer4: 'You want me to say what right? Like, I don\'t get it?',
+        answer4: 'You want me to say \'what\' right? Like, I don\'t get it?',
         correct_answer: 4
     },
     {

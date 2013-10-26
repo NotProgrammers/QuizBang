@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <div id="canvasBubbles" style="position:absolute; height:100%; width:100%; top:0; left:0"></div>
+        <div id="canvasBubbles"></div>
 
         <ul id="messageBox">
         </ul>
@@ -28,15 +28,11 @@
         <script type="text/javascript">
             $(function () {
                 var quiz = $.connection.quizHub;
-                var participants = 0;
                 var questionSelector = new QuestionSelector();
                 
                 quiz.client.broadcastMessage = function (from, message) {
-                    var encodedMsg = $('<div />').text(from + ' ' + message).html();
-                    $('#messageBox').append('<li>' + encodedMsg + '</li>');
 
-                    participants++;
-                    
+                    $('#messageBox').append('<li id="'+ from + '">' + message + '</li>');
                 };
 
                 $.connection.hub.start();
