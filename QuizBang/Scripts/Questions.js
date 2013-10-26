@@ -1,7 +1,5 @@
-﻿var questionGenerator = new QuestionGenerator();
-
-function QuestionGenerator() {
-    this.nextQuestion = function() {
+﻿function QuestionSelector() {
+    this.getNext = function() {
         var questionIndex = Math.floor(Math.random() * questions.length) + 1;
         return questions[questionIndex];
     };
@@ -66,12 +64,12 @@ var questions = [
     },
     {
         question: 'As I was going to St. Ives,<br />'
-                    + 'I met a man with seven wives,<br />'
-                    + 'Each wife had seven sacks,<br />'
-                    + 'Each sack had seven cats,<br />'
-                    + 'Each cat had seven kits:<br />'
-                    + 'Kits, cats, sacks, and wives,<br />'
-                    + 'How many were there going to St. Ives?',
+            + 'I met a man with seven wives,<br />'
+            + 'Each wife had seven sacks,<br />'
+            + 'Each sack had seven cats,<br />'
+            + 'Each cat had seven kits:<br />'
+            + 'Kits, cats, sacks, and wives,<br />'
+            + 'How many were there going to St. Ives?',
         answer1: '1',
         answer2: '1542',
         answer3: '2802',
@@ -84,7 +82,7 @@ var questions = [
         answer2: 'Shell lining',
         answer3: 'Nasal cavity',
         answer4: 'Anus',
-        correct_answer: 4 
+        correct_answer: 4
     },
     {
         question: 'The Mancherster City Council motto is Concilio et Labore. What does it mean?',
@@ -134,15 +132,4 @@ var questions = [
         answer4: 'Still Alive',
         correct_answer: 1
     }
-]
-/*
-,
-{
-    question: '?',
-    answer1: 'C',
-answer2: 'D',
-answer3: 'A',
-answer4: 'B',
-correct_answer: 3
-}
-*/
+];
