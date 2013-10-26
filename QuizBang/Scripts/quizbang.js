@@ -10,7 +10,14 @@ $(function () {
 
 function nextQuestion() {
     window.quizMode = 'QUIZ';
-    var questionContainer = new QuestionSelector().getNext();
-    $('#answer').val(questionContainer.correct_answer);
-    $('.centred-content').html(questionContainer.question);
+    
+    $('#intro').hide();
+    $('#question').show();
+    var question = new QuestionSelector().getNext();
+    $('#question-text').html(question.question);
+    $('#answer-a').html(question.answerA);
+    $('#answer-b').html(question.answerB);
+    $('#answer-c').html(question.answerC);
+    $('#answer-d').html(question.answerD);
+    $('#answer').val(question.correct_answer);
 }

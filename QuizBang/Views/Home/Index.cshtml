@@ -21,16 +21,15 @@
                 </div>
                 <input type="hidden" id="answer" />
                 <div id="question" class="centred-content" style="display: none;">
-
-                    <h2>What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
+                    <h2 id="question-text">What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
                     <div id="answers">
                         <ul class="left">
-                            <li>A: This</li>
-                            <li>C: Another</li>
+                            <li><span class="answer-letter">A:</span><span id="answer-a" class="answer"></span></li>
+                            <li><span class="answer-letter">C:</span><span id="answer-c" class="answer"></span></li>
                         </ul>
                         <ul class="right">
-                            <li>B: That</li>
-                            <li>D: Something</li>
+                            <li><span class="answer-letter">B:</span><span id="answer-b" class="answer"></span></li>
+                            <li><span class="answer-letter">D:</span><span id="answer-d" class="answer"></span></li>
                         </ul>
                         <h2>Text A, B, C or D now!</h2>
                     </div>
