@@ -32,7 +32,7 @@
                 
                 quiz.client.broadcastMessage = function (from, message) {
 
-                    if ($('#' + from)) {
+                    if ($('#' + from).length > 0) {
                         $('#' + from).html(message);
                     }
                     else {
