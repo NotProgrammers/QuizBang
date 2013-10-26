@@ -5,7 +5,12 @@
         <link href="@Url.Content("~/Styles/style.css")" rel="stylesheet" type="text/css" />
         <title>QuizBang!</title>
     </head>
+
     <body>
+        <div id="canvasBubbles" style="position:absolute; height:100%; width:100%; top:0; left:0"></div>
+
+        <ul id="messageBox">
+        </ul>
         <div id="outer">
             <div id="container">
                 <div id="inner">
@@ -16,5 +21,34 @@
                 </div>
             </div>
         </div>
+
+        <script src="Scripts/jquery-1.6.4.min.js"></script>
+        <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
+        <script src="/signalr/hubs"></script>
+        <script type="text/javascript">
+            $(function () {
+                var quiz = $.connection.quizHub;
+                quiz.client.broadcastMessage = function (from, message) {
+                    var encodedMsg = $('<div />').text(from + ' ' + message).html();
+                    $('#messageBox').append('<li>' + encodedMsg + '</li>');
+                };
+
+                $.connection.hub.start();
+            });
+        </script>
+        
+        <script src="Scripts/bubbles.js"></script>
+        <script>
+            bubblesMain(new Object({
+                type: 'radial',
+                revolve: 'center',
+                minSpeed: 100,
+                maxSpeed: 500,
+                minSize: 50,
+                maxSize: 150,
+                num: 100,
+                colors: new Array('#FFFFFF', '#BBBBBB')
+            }));
+        </script>
     </body>
 </html>
