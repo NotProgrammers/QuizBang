@@ -104,15 +104,31 @@ body.started {
     padding: 5px;
     border: 2px solid #333;
     width: 200px;
+    height: 3.0em;
+    overflow: hidden;
     background-color: wheat;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     font-size: 20px;
+    text-align: left;
+}
+
+#answers li span.answer {
+    display: inline-block;
+    width: 180px;
+}
+#answers li span.answer-letter {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #advance {
     position: absolute;
     bottom: 10px;
     right: 10px;
+}
+
+.clearfix {
+	display: inline-block;
 }
