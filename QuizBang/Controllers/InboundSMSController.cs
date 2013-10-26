@@ -12,7 +12,7 @@ namespace QuizBang.Controllers
         public ActionResult SMSReceived(string to, string from, string msg_id, string content)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<QuizHub>();
-            hubContext.Clients.All.broadcastMessage("Bang - " + from);
+            hubContext.Clients.All.broadcastMessage(from, content);
 
             return new EmptyResult();
         }
@@ -22,7 +22,7 @@ namespace QuizBang.Controllers
             string message = "Bang - " + DateTime.Now.ToString();
 
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<QuizHub>();
-            hubContext.Clients.All.broadcastMessage(message);
+            hubContext.Clients.All.broadcastMessage("0123456789", "test message " + DateTime.Now.ToLongTimeString());
 
             return Content(message);
         }
