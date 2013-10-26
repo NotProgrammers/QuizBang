@@ -13,6 +13,12 @@
         }
     }
     else if (window.quizMode == 'QUIZ') {
-        $('#' + from).addClass('received');
+        if (message.length < 2) {
+            $('#' + from).addClass('received');
+            var correctAnswer = $('#answer').val();
+            if (message.toUpperCase() !== correctAnswer) {
+                $('#' + from).addClass('incorrect');
+            }
+        }
     } 
 }

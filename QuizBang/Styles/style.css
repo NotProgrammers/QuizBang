@@ -79,9 +79,10 @@ body.started {
 }
 
 #messageBox li.received {
-    background-color: lightgreen;
+    background-color:lightseagreen;
 
 }
+
 
 #answers ul.left {
     float: left;

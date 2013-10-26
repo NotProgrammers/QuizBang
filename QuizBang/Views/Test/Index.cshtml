@@ -35,7 +35,7 @@
                 },
                 {
                     mobile: "07875111112",
-                    name: "Pat Butcher"
+                    name: "Pat"
                 },
                 {
                     mobile: "07875111113",
@@ -113,16 +113,16 @@
                 answerAll();
             });
             $('#answer-1-and-one-2').click(function () {
-                answerAllButOne(1, 2);
+                answerAllButOne('A','B');
             });
             $('#answer-2-and-one-3').click(function () {
-                answerAllButOne(2, 3);
+                answerAllButOne('B', 'C');
             });
             $('#"answer-3-and-one-4').click(function () {
-                answerAllButOne(3, 4);
+                answerAllButOne('C', 'D');
             });
             $('#answer-4-and-one-1').click(function () {
-                answerAllButOne(4, 1);
+                answerAllButOne('D', 'A');
             });
         });
     </script>
@@ -133,10 +133,10 @@
             <legend>A test does what?</legend>
             <input id="register-test-users" type="button" value="Register 12 test users"/>
             <input id="answer-all" type="button" value="Answer 1,2,3 and 4 equally"/>
-            <input id="answer-1-and-one-2" type="button" value="Answer 1 and one 2"/>
-            <input id="answer-2-and-one-3" type="button" value="Answer 2 and one 3"/>
-            <input id="answer-3-and-one-4" type="button" value="Answer 3 and one 4"/>
-            <input id="answer-4-and-one-1" type="button" value="Answer 4 and one 1"/>
+            <input id="answer-1-and-one-2" type="button" value="Answer A and one B"/>
+            <input id="answer-2-and-one-3" type="button" value="Answer B and one C"/>
+            <input id="answer-3-and-one-4" type="button" value="Answer C and one D"/>
+            <input id="answer-4-and-one-1" type="button" value="Answer D and one A"/>
         </fieldset>
     </div>
     <div>

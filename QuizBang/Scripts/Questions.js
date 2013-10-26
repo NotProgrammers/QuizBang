@@ -13,59 +13,59 @@
 var questions = [
     {
         question: 'SignalR is a ...',
-        answer1: 'Programming framework',
-        answer2: 'Refreshing minty toothpaste',
-        answer3: 'Ruby',
-        answer4: 'C hash',
-        correct_answer: 4
+        answerA: 'Programming framework',
+        answerB: 'Refreshing minty toothpaste',
+        answerC: 'Ruby',
+        answerD: 'C hash',
+        correct_answer: 'D'
     },
     {
         question: 'Which of the following comic book characters can be found on a HackManchester pinball machine?',
-        answer1: 'Superman',
-        answer2: 'Wolverine',
-        answer3: 'The Incredible Hulk',
-        answer4: 'Robin',
-        correct_answer: 2
+        answerA: 'Superman',
+        answerB: 'Wolverine',
+        answerC: 'The Incredible Hulk',
+        answerD: 'Robin',
+        correct_answer: 'B'
     },
     {
         question: 'In which gallery at the Museum of Science and Industry will you find the Beyer-Garratt articulated steam locomotive?',
-        answer1: 'The Age of Steam Gallery',
-        answer2: 'The Rail Yard',
-        answer3: 'The Revolution Manchester Gallery',
-        answer4: 'The Power Hall',
-        correct_answer: 4
+        answerA: 'The Age of Steam Gallery',
+        answerB: 'The Rail Yard',
+        answerC: 'The Revolution Manchester Gallery',
+        answerD: 'The Power Hall',
+        correct_answer: 'D'
     },
     {
         question: 'How many packs of Refreshing Wipes did you get in your HackManchester comfort kit?',
-        answer1: '1',
-        answer2: '2',
-        answer3: '3',
-        answer4: '4',
-        correct_answer: 2
+        answerA: '1',
+        answerB: '2',
+        answerC: '3',
+        answerD: '4',
+        correct_answer: 'B'
     },
     {
         question: 'Bell End is a small town south of which city?',
-        answer1: 'Nottingham',
-        answer2: 'Birmingham',
-        answer3: 'London',
-        answer4: 'Exeter',
-        correct_answer: 2
+        answerA: 'Nottingham',
+        answerB: 'Birmingham',
+        answerC: 'London',
+        answerD: 'Exeter',
+        correct_answer: 'B'
     },
     {
         question: 'Who took over when Lenin died?',
-        answer1: 'Starr',
-        answer2: 'Stalin',
-        answer3: 'Harrison',
-        answer4: 'McCartney',
-        correct_answer: 2
+        answerA: 'Starr',
+        answerB: 'Stalin',
+        answerC: 'Harrison',
+        answerD: 'McCartney',
+        correct_answer: 'B'
     },
     {
         question: 'What is the first letter of the English alphabet?',
-        answer1: 'C',
-        answer2: 'D',
-        answer3: 'A',
-        answer4: 'B',
-        correct_answer: 3
+        answerA: 'C',
+        answerB: 'D',
+        answerC: 'A',
+        answerD: 'B',
+        correct_answer: 'C'
     },
     {
         question: 'As I was going to St. Ives,<br />'
@@ -75,66 +75,66 @@ var questions = [
             + 'Each cat had seven kits:<br />'
             + 'Kits, cats, sacks, and wives,<br />'
             + 'How many were there going to St. Ives?',
-        answer1: '1',
-        answer2: '1542',
-        answer3: '2802',
-        answer4: 'Jeremy Irons',
-        correct_answer: 1
+        answerA: '1',
+        answerB: '1542',
+        answerC: '2802',
+        answerD: 'Jeremy Irons',
+        correct_answer: 'A'
     },
     {
         question: 'What part of the body does a turtle use to breathe?',
-        answer1: 'Proboscus',
-        answer2: 'Shell lining',
-        answer3: 'Nasal cavity',
-        answer4: 'Anus',
-        correct_answer: 4
+        answerA: 'Proboscus',
+        answerB: 'Shell lining',
+        answerC: 'Nasal cavity',
+        answerD: 'Anus',
+        correct_answer: 'D'
     },
     {
         question: 'The Mancherster City Council motto is Concilio et Labore. What does it mean?',
-        answer1: 'Four lighters for a pound',
-        answer2: 'Pride in Battle',
-        answer3: 'By wisdom and effort',
-        answer4: 'Look mate, I don\'t make the rules. No trainers.',
-        correct_answer: 3
+        answerA: 'Four lighters for a pound',
+        answerB: 'Pride in Battle',
+        answerC: 'By wisdom and effort',
+        answerD: 'Look mate, I don\'t make the rules. No trainers.',
+        correct_answer: 'C'
     },
     {
         question: 'Nottingham is well known for its violent gangs, but who was tasked with tackling legendary 12th century criminals Robin Hood and his Merry Men?',
-        answer1: 'Nottinghamshire Constabulary',
-        answer2: 'Operation Trident',
-        answer3: 'The Sheriff of Nottingham',
-        answer4: 'Vigilante Justice',
-        correct_answer: 3
+        answerA: 'Nottinghamshire Constabulary',
+        answerB: 'Operation Trident',
+        answerC: 'The Sheriff of Nottingham',
+        answerD: 'Vigilante Justice',
+        correct_answer: 'C'
     },
     {
         question: 'Which of the following is Coronation Street\'s longest serving character?',
-        answer1: 'Ken Barlow',
-        answer2: 'Samir Rashid',
-        answer3: 'Vera Duckworth',
-        answer4: 'Fred West',
-        correct_answer: 3
+        answerA: 'Ken Barlow',
+        answerB: 'Samir Rashid',
+        answerC: 'Vera Duckworth',
+        answerD: 'Fred West',
+        correct_answer: 'C'
     },
     {
         question: 'A sphinctersayswhat?',
-        answer1: 'What?',
-        answer2: 'Who?',
-        answer3: 'Eh?',
-        answer4: 'You want me to say \'what\' right? Like, I don\'t get it?',
-        correct_answer: 4
+        answerA: 'What?',
+        answerB: 'Who?',
+        answerC: 'Eh?',
+        answerD: 'You want me to say \'what\' right? Like, I don\'t get it?',
+        correct_answer: 'D'
     },
     {
         question: 'Which of the following was the Happy Mondays\' highest charting UK single?',
-        answer1: 'Maaaaaaaaate',
-        answer2: 'Step On',
-        answer3: 'Bob\'s Yer Uncle',
-        answer4: 'What Makes You Beautiful',
-        correct_answer: 2
+        answerA: 'Maaaaaaaaate',
+        answerB: 'Step On',
+        answerC: 'Bob\'s Yer Uncle',
+        answerD: 'What Makes You Beautiful',
+        correct_answer: 'B'
     },
     {
         question: 'What was the first song ever sung by a computer?',
-        answer1: 'Daisy Bell',
-        answer2: 'Bangarang feat. Sirah',
-        answer3: 'Mary Had a Little Lamb',
-        answer4: 'Still Alive',
-        correct_answer: 1
+        answerA: 'Daisy Bell',
+        answerB: 'Bangarang feat. Sirah',
+        answerC: 'Mary Had a Little Lamb',
+        answerD: 'Still Alive',
+        correct_answer: 'A'
     }
 ];
