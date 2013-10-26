@@ -32,10 +32,12 @@
                 
                 quiz.client.broadcastMessage = function (from, message) {
 
-                    if ($('#' + from))
-                        $('#' + from).remove();
-                    
-                    $('#messageBox').append('<li id="'+ from + '">' + message + '</li>');
+                    if ($('#' + from)) {
+                        $('#' + from).html(message);
+                    }
+                    else {
+                        $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
+                    }
                 };
 
                 $.connection.hub.start();
