@@ -13,13 +13,8 @@
         }
     }
     else if (window.quizMode == 'QUIZ') {
-        // record answer
+        alert(from + ' said ' + message);
     } else {
-        alert('boom');
+        throw ('Unknown quiz mode');
     }
-}
-
-function startQuiz() {
-    window.quizMode = 'QUIZ';
-    $('.centred-content').html(new QuestionSelector().getNext().question);
 }
