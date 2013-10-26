@@ -1,16 +1,22 @@
 ﻿function handleMessage(from, message) {
 
-     if ($('#' + from).length > 0) {
-         $('#' + from).html(message);
-     }
-     else {
-         $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
+    if (window.quizMode === 'REGISTRATION') {
+        if ($('#' + from).length > 0) {
+            $('#' + from).html(message);
+        }
+        else {
+            $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
 
-         if ($('#messageBox li').length > 1) {
-             $('#startInstructions').show();
-         }
-
-     }
+            if ($('#messageBox li').length > 1) {
+                $('#startInstructions').show();
+            }
+        }
+    }
+    else if (window.quizMode == 'QUIZ') {
+        // record answer
+    } else {
+        alert('boom');
+    }
 }
 
 function startQuiz() {
