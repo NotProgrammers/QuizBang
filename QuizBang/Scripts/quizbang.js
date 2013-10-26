@@ -10,5 +10,7 @@ $(function () {
 
 function nextQuestion() {
     window.quizMode = 'QUIZ';
-    $('.centred-content').html(new QuestionSelector().getNext().question);
+    var questionContainer = new QuestionSelector().getNext();
+    $('#answer').val(questionContainer.correct_answer);
+    $('.centred-content').html(questionContainer.question);
 }
