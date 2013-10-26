@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBang", "QuizBang\QuizBang.csproj", "{BEFFCB4F-8836-4FD7-A430-969CA97349AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBang", "QuizBang\QuizBang.csproj", "{5B01A510-6545-43EC-A1CF-99C9740A4D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBang.Test", "QuizBang.Test\QuizBang.Test.csproj", "{CE3481F8-2357-4715-AE3C-F44A3A58EADF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBang.Test", "QuizBang.Test\QuizBang.Test.csproj", "{C7E2ACC0-1399-4C9F-9ED7-AF1F69FFF3C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F825BC5-3207-40B7-A1CA-D1F7432EC277}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B6ED8D2B-F239-49DE-9D03-B6BAD7F1FED2}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
@@ -18,14 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BEFFCB4F-8836-4FD7-A430-969CA97349AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEFFCB4F-8836-4FD7-A430-969CA97349AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEFFCB4F-8836-4FD7-A430-969CA97349AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEFFCB4F-8836-4FD7-A430-969CA97349AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE3481F8-2357-4715-AE3C-F44A3A58EADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE3481F8-2357-4715-AE3C-F44A3A58EADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE3481F8-2357-4715-AE3C-F44A3A58EADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE3481F8-2357-4715-AE3C-F44A3A58EADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B01A510-6545-43EC-A1CF-99C9740A4D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B01A510-6545-43EC-A1CF-99C9740A4D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B01A510-6545-43EC-A1CF-99C9740A4D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B01A510-6545-43EC-A1CF-99C9740A4D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E2ACC0-1399-4C9F-9ED7-AF1F69FFF3C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E2ACC0-1399-4C9F-9ED7-AF1F69FFF3C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E2ACC0-1399-4C9F-9ED7-AF1F69FFF3C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E2ACC0-1399-4C9F-9ED7-AF1F69FFF3C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
