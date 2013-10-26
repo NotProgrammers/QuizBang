@@ -9,30 +9,6 @@ function QuestionGenerator() {
 
 var questions = [
     {
-        question: 'How big is your momma?',
-        answer1: 'Tiny',
-        answer2: 'Medium',
-        answer3: 'Large',
-        answer4: 'Huge',
-        correct_answer: 4
-    },
-    {
-        question: 'How many comments does the best code have?',
-        answer1: 'None, obvs.',
-        answer2: 'Some',
-        answer3: 'Every other line',
-        answer4: 'Every line',
-        correct_answer: 1
-    },
-    {
-        question: 'Proper programmers use?',
-        answer1: 'PHP',
-        answer2: 'Java',
-        answer3: 'Ruby',
-        answer4: 'C hash',
-        correct_answer: 4
-    },
-    {
         question: 'SignalR is a ...',
         answer1: 'Programming framework',
         answer2: 'Refreshing minty toothpaste',
@@ -79,21 +55,94 @@ var questions = [
         answer3: 'Harrison',
         answer4: 'McCartney',
         correct_answer: 2
+    },
+    {
+        question: 'What is the first letter of the English alphabet?',
+        answer1: 'C',
+        answer2: 'D',
+        answer3: 'A',
+        answer4: 'B',
+        correct_answer: 3
+    },
+    {
+        question: 'As I was going to St. Ives,<br />'
+                    + 'I met a man with seven wives,<br />'
+                    + 'Each wife had seven sacks,<br />'
+                    + 'Each sack had seven cats,<br />'
+                    + 'Each cat had seven kits:<br />'
+                    + 'Kits, cats, sacks, and wives,<br />'
+                    + 'How many were there going to St. Ives?',
+        answer1: '1',
+        answer2: '1542',
+        answer3: '2802',
+        answer4: 'Jeremy Irons',
+        correct_answer: 1
+    },
+    {
+        question: 'What part of the body does a turtle use to breathe?',
+        answer1: 'Proboscus',
+        answer2: 'Shell lining',
+        answer3: 'Nasal cavity',
+        answer4: 'Anus',
+        correct_answer: 4 
+    },
+    {
+        question: 'The Mancherster City Council motto is Concilio et Labore. What does it mean?',
+        answer1: 'Four lighters for a pound',
+        answer2: 'Pride in Battle',
+        answer3: 'By wisdom and effort',
+        answer4: 'Look mate, I don\'t make the rules. No trainers.',
+        correct_answer: 3
+    },
+    {
+        question: 'Nottingham is well known for its violent gangs, but who was tasked with tackling legendary 12th century criminals Robin Hood and his Merry Men?',
+        answer1: 'Nottinghamshire Constabulary',
+        answer2: 'Operation Trident',
+        answer3: 'The Sheriff of Nottingham',
+        answer4: 'Vigilante Justice',
+        correct_answer: 3
+    },
+    {
+        question: 'Which of the following is Coronation Street\'s longest serving character?',
+        answer1: 'Ken Barlow',
+        answer2: 'Samir Rashid',
+        answer3: 'Vera Duckworth',
+        answer4: 'Fred West',
+        correct_answer: 3
+    },
+    {
+        question: 'A sphinctersayswhat?',
+        answer1: 'What?',
+        answer2: 'Who?',
+        answer3: 'Eh?',
+        answer4: 'You want me to say what right? Like, I don\'t get it?',
+        correct_answer: 4
+    },
+    {
+        question: 'Which of the following was the Happy Mondays\' highest charting UK single?',
+        answer1: 'Maaaaaaaaate',
+        answer2: 'Step On',
+        answer3: 'Bob\'s Yer Uncle',
+        answer4: 'What Makes You Beautiful',
+        correct_answer: 2
+    },
+    {
+        question: 'What was the first song ever sung by a computer?',
+        answer1: 'Daisy Bell',
+        answer2: 'Bangarang feat. Sirah',
+        answer3: 'Mary Had a Little Lamb',
+        answer4: 'Still Alive',
+        correct_answer: 1
     }
 ]
-
-//answers: [
-//           {
-//               answer: 'Tiny'
-//           },
-//           {
-//               answer: 'Medium'
-//           },
-//           {
-//               answer: 'Large'
-//           },
-//           {
-//               answer: 'Enormous',
-//               isCorrect: true
-//           }
-//]
+/*
+,
+{
+    question: '?',
+    answer1: 'C',
+answer2: 'D',
+answer3: 'A',
+answer4: 'B',
+correct_answer: 3
+}
+*/
