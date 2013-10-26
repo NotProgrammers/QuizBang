@@ -1,53 +1,73 @@
 ﻿<!DOCTYPE html>
 
 <html>
-    <head>
-        <link href="@Url.Content("~/Styles/style.css")" rel="stylesheet" type="text/css" />
-        <title>QuizBang!</title>
-    </head>
+<head>
+    <link href="@Url.Content("~/Styles/style.css")" rel="stylesheet" type="text/css" />
+    <title>QuizBang!</title>
+</head>
 
-    <body>
-        <div id="canvasBubbles"></div>
+<body>
+    <div id="canvasBubbles"></div>
 
-        <ul id="messageBox">
-        </ul>
-        <div id="outer">
-            <div id="container">
-                <div id="inner">
-                    <div class="centred-content">
-                        <h1>QuizBang!</h1>
-                        <h2>Text your name to (number) to enter</h2>
+    <ul id="messageBox">
+    </ul>
+    <div id="outer">
+        <div id="container">
+            <div id="inner">
+                <div class="centred-content" style="display: none;">
+                    <h1>QuizBang!</h1>
+                    <h2>Text your name to (number) to enter</h2>
+                </div>
+                <div class="centred-content question">
+                    <h2>What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
+                    <div id="answers">
+                        <ul class="left">
+                            <li>A: This</li>
+                            <li>C: Another</li>
+                        </ul>
+                        <ul class="right">
+                            <li>B: That</li>
+                            <li>D: Something</li>
+                        </ul>
+                        <h2>Text A, B, C or D now!</h2>
                     </div>
+                </div>
+                <div class="centred-content win-screen" style="display: none;">
+                    <h1>Pavel</h1>
+                    <h2>is the winner!</h2>
+                    <h2>Thanks for playing!</h2>
                 </div>
             </div>
         </div>
+    </div>
+    <a id="advance" href="#">Go</a>
 
-        <script src="Scripts/jquery-1.6.4.min.js"></script>
-        <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
-        <script src="/signalr/hubs"></script>
-        <script type="text/javascript">
-            $(function () {
-                var quiz = $.connection.quizHub;
-                quiz.client.broadcastMessage = function (from, message) {
-                    $('#messageBox').append('<li id="'+ from + '">' + message + '</li>');
-                };
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            var quiz = $.connection.quizHub;
+            quiz.client.broadcastMessage = function (from, message) {
+                $('#messageBox').append('<li id="' + from + '">' + message + '</li>');
+            };
 
-                $.connection.hub.start();
-            });
-        </script>
-        
-        <script src="Scripts/bubbles.js"></script>
-        <script>
-            bubblesMain(new Object({
-                type: 'radial',
-                revolve: 'center',
-                minSpeed: 100,
-                maxSpeed: 500,
-                minSize: 50,
-                maxSize: 150,
-                num: 100,
-                colors: new Array('#FFFFFF', '#BBBBBB')
-            }));
-        </script>
-    </body>
+            $.connection.hub.start();
+        });
+    </script>
+
+    <script src="Scripts/bubbles.js"></script>
+    <script>
+        bubblesMain(new Object({
+            type: 'radial',
+            revolve: 'center',
+            minSpeed: 100,
+            maxSpeed: 500,
+            minSize: 50,
+            maxSize: 150,
+            num: 100,
+            colors: new Array('#FFFFFF', '#BBBBBB')
+        }));
+    </script>
+</body>
 </html>
