@@ -1,20 +1,38 @@
 ﻿<!DOCTYPE html>
 
 <html>
-    <head>
-        <link href="@Url.Content("~/Styles/style.css")" rel="stylesheet" type="text/css" />
-        <title>QuizBang!</title>
-    </head>
-    <body>
-        <div id="outer">
-            <div id="container">
-                <div id="inner">
-                    <div class="centred-content">
-                        <h1>QuizBang!</h1>
-                        <h2>Text your name to (number) to enter</h2>
-                    </div>
+<head>
+    <link href="@Url.Content("~/Styles/style.css")" rel="stylesheet" type="text/css" />
+    <title>QuizBang!</title>
+</head>
+<body>
+    <ul id="messageBox">
+    </ul>
+    <div id="outer">
+        <div id="container">
+            <div id="inner">
+                <div class="centred-content">
+                    <h1>QuizBang!</h1>
+                    <h2>Text your name to (number) to enter</h2>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="/Scripts/jquery.signalR-2.0.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function () {
+            var quiz = $.connection.quizHub;
+            quiz.client.broadcastMessage = function (from, message) {
+                var encodedMsg = $('<div />').text(from + ' ' + message).html();
+                $('#messageBox').append('<li>' + encodedMsg + '</li>');
+            };
+
+            $.connection.hub.start();
+        });
+    </script>
+</body>
 </html>
