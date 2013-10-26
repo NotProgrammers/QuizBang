@@ -10,5 +10,12 @@ $(function () {
 
 function nextQuestion() {
     window.quizMode = 'QUIZ';
-    $('.centred-content').html(new QuestionSelector().getNext().question);
+    $('#intro').hide();
+    $('#question').show();
+    var question = new QuestionSelector().getNext();
+    $('#question-text').html(question.question);
+    $('#answer-a').html(question.answer1);
+    $('#answer-b').html(question.answer2);
+    $('#answer-c').html(question.answer3);
+    $('#answer-d').html(question.answer4);
 }
