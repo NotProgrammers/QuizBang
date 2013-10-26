@@ -11,12 +11,24 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script>
+        var testUsers = new Array();
+
         function registerTestUser(mobile, name) {
+            testUsers.push({ mobile: mobile, name: name });
             $.get("/InboundSMS/SMSReceived", { from: mobile, content: name });
+            $('#registered-test-users').append('<li>' + name + ' - ' + mobile + '</li>');
+        }
+        
+        function submitAnswer(mobile, answer) {
+            $.get("/InboundSMS/SMSReceived", { from: mobile, content: answer });
+            $('#submitted-answers').prepend('<li>' + name + ' - ' + mobile + ' - ' + answer + '</li>');
         }
 
         function registerTestUsers() {
-            var testUsers = [
+            testUsers = new Array();
+            $('#registered-test-users').empty();
+            
+            var baseTestUsers = [
                 {
                     mobile: "07875111111",
                     name: "Alex"
@@ -27,20 +39,68 @@
                 },
                 {
                     mobile: "07875111113",
-                    name: "Alex"
+                    name: "Sam"
                 },
                 {
                     mobile: "07875111114",
-                    name: "Pat Butcher"
+                    name: "Nikki"
                 },
                 {
                     mobile: "07875111115",
-                    name: "Alex"
+                    name: "Neil"
+                },
+                {
+                    mobile: "07875111116",
+                    name: "Oli"
+                },
+                {
+                    mobile: "07875111117",
+                    name: "James"
+                },
+                {
+                    mobile: "07875111118",
+                    name: "Jonathan"
+                },
+                {
+                    mobile: "07875111119",
+                    name: "Andrew"
+                },
+                {
+                    mobile: "07875111120",
+                    name: "Rupert"
+                },
+                {
+                    mobile: "07875111121",
+                    name: "Henry"
+                },
+                {
+                    mobile: "07875111122",
+                    name: "Winston"
                 }
             ];
-            testUsers.forEach(function(testUser) {
+            
+            baseTestUsers.forEach(function(testUser) {
                 registerTestUser(testUser.mobile, testUser.name);
+                
                 console.log("Registered:" + testUser.mobile + " " + testUser.name);
+            });
+        }
+
+        function answerAll() {
+            testUsers.forEach(function (testUser) {
+                submitAnswer(testUser.mobile, (testUser.mobile % 4) + 1);
+            });
+        }
+        
+        function answerAllButOne(answer, oneOtherAnswer) {
+            var count = 0;
+            testUsers.forEach(function (testUser) {
+                if (count == 0) {
+                    submitAnswer(testUser.mobile, oneOtherAnswer);
+                } else {
+                    submitAnswer(testUser.mobile, answer);
+                }
+                count++;
             });
         }
 
@@ -49,16 +109,43 @@
             $('#register-test-users').click(function() {
                 registerTestUsers();
             });
+            $('#answer-all').click(function () {
+                answerAll();
+            });
+            $('#answer-1-and-one-2').click(function () {
+                answerAllButOne(1, 2);
+            });
+            $('#answer-2-and-one-3').click(function () {
+                answerAllButOne(2, 3);
+            });
+            $('#"answer-3-and-one-4').click(function () {
+                answerAllButOne(3, 4);
+            });
+            $('#answer-4-and-one-1').click(function () {
+                answerAllButOne(4, 1);
+            });
         });
     </script>
 </head>
 <body>
     <div>
         <fieldset>
-            <legend>Register test users</legend>
-            <div>Register 10 test users</div>
-            <input id="register-test-users" type="button" value="Register users"/>
+            <legend>A test does what?</legend>
+            <input id="register-test-users" type="button" value="Register 12 test users"/>
+            <input id="answer-all" type="button" value="Answer 1,2,3 and 4 equally"/>
+            <input id="answer-1-and-one-2" type="button" value="Answer 1 and one 2"/>
+            <input id="answer-2-and-one-3" type="button" value="Answer 2 and one 3"/>
+            <input id="answer-3-and-one-4" type="button" value="Answer 3 and one 4"/>
+            <input id="answer-4-and-one-1" type="button" value="Answer 4 and one 1"/>
         </fieldset>
+    </div>
+    <div>
+        <h3>Test users</h3>
+        <ul id='registered-test-users'>
+        </ul>
+        <h3>Recent answers</h3>
+        <ul id='submitted-answers'>
+        </ul>
     </div>
 </body>
 </html>
