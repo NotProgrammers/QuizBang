@@ -66,6 +66,7 @@ function winScreen() {
     $('#winner').html(winnerName);
     $('#intro').hide();
     $('#question').hide();
+    $('.user').hide();
     $('#win-screen').show();
     
     
