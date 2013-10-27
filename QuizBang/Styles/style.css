@@ -41,11 +41,13 @@ body.started {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    /*background-color: white;
     border: 3px solid silver;
     -webkit-border-radius: 400px / 200px;
     -moz-border-radius: 400px / 200px;
-    border-radius: 400px / 200px;
+    border-radius: 400px / 200px;*/
+    background-image: url('/Images/question-bubble.png');
+    background-repeat: no-repeat;
     display: table;
 }
 
@@ -69,14 +71,17 @@ body.started {
     position: absolute;
     left: 50%;
     top: 50%;
-    background-color: white;
+    /*background-color: white;*/
+    background-image: url('/Images/clearbubble.png');
+    background-repeat: no-repeat;
+
     width: 150px;
     height: 150px;
     -webkit-border-radius: 75px;
     -moz-border-radius: 75px;
     border-radius: 750px;
     margin: 0;
-    border: 3px solid silver;
+    /*border: 3px solid silver;*/
     display: table;
 }
 
@@ -86,18 +91,18 @@ body.started {
 }
 
 .user.received {
-    background-color: wheat;
-    border-color: #333; 
+    background-image: url('/Images/answered-bubble.png');
+    background-repeat: no-repeat;
 }
 
 #answers ul.left {
     float: left;
-    margin-left: 20px;
+    margin-left: 78px;
 }
 
 #answers ul.right {
     float: right;
-    margin-right: 20px;
+    margin-right: 78px;
 }
 
 #answers ul {
@@ -106,14 +111,18 @@ body.started {
     padding: 0;
 }
 
+#question-instruction {
+    clear: both;
+}
+
 #answers li {
     margin: 10px;
-    padding: 5px;
-    border: 2px solid #333;
-    width: 280px;
+    padding: 4px;
+    border: 2px solid #32ccca;
+    width: 238px;
     height: 3.0em;
     overflow: hidden;
-    background-color: wheat;
+    background-color: #32ccca;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -121,7 +130,7 @@ body.started {
 }
 
 #answers .correct {
-    background-color:gold;
+    background-color:#2ca80b;
 }
 
 #answers li span {
