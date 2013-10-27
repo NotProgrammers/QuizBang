@@ -7,6 +7,7 @@
         else {
             $('#messageBox').append('<div id="' + from + '">' + message + '</div>');
 
+            distributeUsers();
             if ($('#messageBox div').length > 1) {
                 $('#startInstructions').show();
             }
