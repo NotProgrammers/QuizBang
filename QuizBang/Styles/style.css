@@ -1,4 +1,4 @@
-
+﻿
 /* mac hide \*/
 html, body {
     height: 100%;
@@ -70,6 +70,8 @@ body.started {
 
 #messageBox div {
     position: absolute;
+    left: 50%;
+    top: 50%;
     background-color: white;
     width: 150px;
     height: 150px;
@@ -119,13 +121,8 @@ body.started {
     display: inline-block;
     width: 180px;
 }
+
 #answers li span.answer-letter {
     display: inline-block;
     vertical-align: top;
-}
-
-#advance {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
 }

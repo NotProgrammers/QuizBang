@@ -10,6 +10,9 @@
     <div id="canvasBubbles"></div>
 
     <div id="messageBox">
+        <div>Sam</div>
+        <div>John</div>
+        <div>Dave</div>
     </div>
     <div id="outer">
         <div id="container">
@@ -75,39 +78,31 @@
             }
         }
 
-        var angle = 0;
         var xcenter = $(window).width() / 2;
         var ycenter = $(window).height() / 2;
-
-        var angles = [];
+        var radians = [];
+        var r = 380;
 
         function orbit() {
-            var index = 0;
-            $("#messageBox div").each(function () {
-                angles[index] += 0.005;
-
-                var r = 380;
-
-                var newLeft = Math.floor(xcenter + (r * Math.cos(angles[index]))) - 75;
-                var newTop = Math.floor(ycenter + (r * Math.sin(angles[index])) * 0.75) - 75;
+            $("#messageBox div").each(function (index) {
+                radians[index] += 0.005;
+                var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 75;
+                var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.75) - 75;
 
                 $(this).animate({
-                        top: newTop,
-                        left: newLeft,
-                    }, 1, function() {
-                        orbit();
-                    });
-
-                index++;
+                    top: newTop,
+                    left: newLeft,
+                });
             });
         }
-        
+
         function distributeUsers() {
+            $("#messageBox div").stop(true, true);
+            radians = [];
             var numberOfUsers = $("#messageBox div").length;
-            var interval = 360 / numberOfUsers;
-            angles = [0];
-            for (var i = 1; i < numberOfUsers; i++) {
-                angles.push(angles[angles.length-1] + interval);
+            var interval = (2 * Math.PI) / numberOfUsers;
+            for (var i = 0; i < numberOfUsers; i++) {
+                radians.push(interval * i);
             }
             orbit();
         }
