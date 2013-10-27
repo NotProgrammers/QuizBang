@@ -17,7 +17,7 @@ var questions = [
         answerB: 'Refreshing minty toothpaste',
         answerC: 'Ruby',
         answerD: 'C hash',
-        correct_answer: 'D'
+        correct_answer: 'A'
     },
     {
         question: 'Which of the following comic book characters can be found on a HackManchester pinball machine?',
@@ -111,7 +111,7 @@ var questions = [
         answerB: 'Samir Rashid',
         answerC: 'Vera Duckworth',
         answerD: 'Fred West',
-        correct_answer: 'C'
+        correct_answer: 'A'
     },
     {
         question: 'A sphinctersayswhat?',

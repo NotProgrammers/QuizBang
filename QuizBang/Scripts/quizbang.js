@@ -10,7 +10,7 @@ $(function () {
 
 function nextQuestion() {
     window.quizMode = 'QUIZ';
-    
+    $('#messageBox div').removeClass('received');
     $('#intro').hide();
     $('#question').show();
     var question = new QuestionSelector().getNext();

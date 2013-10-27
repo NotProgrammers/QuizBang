@@ -20,9 +20,10 @@
             if (message.toUpperCase() !== correctAnswer) {
                 $('#' + from).addClass('incorrect');
             }
-            
-            if ($('#messageBox div').length === $('.received').length) {
-                alert(correctAnswer);
+            var messageBoxDivs = $('#messageBox div').length;
+            var receivedDivs = $('.received').length;
+            if (messageBoxDivs === receivedDivs) {
+                $('.answerblock-' + correctAnswer).addClass("correct");
             }
         }
     }
