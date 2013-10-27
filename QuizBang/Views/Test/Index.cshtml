@@ -16,8 +16,14 @@
         function registerTestUser(mobile, name) {
             testUsers.push({ mobile: mobile, name: name });
             $.get("/InboundSMS/SMSReceived", { from: mobile, content: name });
+
+            var listItem = $('<li>' + name + ' - ' + mobile + '</li>')
+                .append("<input type='button' onclick=submitAnswer('" + mobile + "','A') value='A'/>")
+                .append("<input type='button' onclick=submitAnswer('" + mobile + "','B') value='B'/>")
+                .append("<input type='button' onclick=submitAnswer('" + mobile + "','C') value='C'/>")
+                .append("<input type='button' onclick=submitAnswer('" + mobile + "','D') value='D'/>");
             $('#registered-test-users')
-                .append('<li>' + name + ' - ' + mobile + '</li>');
+                .append(listItem);
         }
         
         function submitAnswer(mobile, answer) {
