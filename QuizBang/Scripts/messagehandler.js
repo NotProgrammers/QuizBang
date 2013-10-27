@@ -9,6 +9,7 @@
 
             distributeUsers();
             if ($('.user').length > 1) {
+                $('#waitingForPlayers').hide();
                 $('#startInstructions').show();
             }
         }

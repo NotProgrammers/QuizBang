@@ -15,6 +15,7 @@
                 <div id="intro" class="centred-content">
                     <h1>QuizBang!</h1>
                     <h2>Text your name to 07860 033103 to enter</h2>
+                    <p id="waitingForPlayers">Waiting for players</p>
                     <p id="startInstructions" style="display: none;">Press any key to start quiz!</p>
                 </div>
                 <input type="hidden" id="answer" />
@@ -79,8 +80,16 @@
         }
 
         $(function () {
-            distributeUsers();
+            flashWaitingForPlayersMessage();
         });
+        
+        function flashWaitingForPlayersMessage() {
+            $("#waitingForPlayers").animate({ opacity: 0.2 }, 1000, function() {
+                $(this).animate({ opacity: 1 }, 1000, function() {
+                    flashWaitingForPlayersMessage();
+                });
+            });
+        }
     </script>
 </body>
 </html>
