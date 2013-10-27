@@ -52,28 +52,12 @@
     <script src="~/Scripts/messagehandler.js" type="text/javascript"></script>
     <script>
 
-        //$("body").click(function () {
-
-        //    bubblesMain(new Object({
-        //        type: 'linear',
-        //        revolve: 'center',
-        //        minSpeed: 100,
-        //        maxSpeed: 500,
-        //        minSize: 50,
-        //        maxSize: 150,
-        //        num: 100,
-        //        colors: new Array('#FFFFFF', '#BBBBBB')
-        //    }));
-        //    cycleBackgroundColors();
-        //});
-
-        function cycleBackgroundColors() {
-            var colors = ["green", "yellow", "red", "purple", "blue"];
-            var i = 0;
-            while (i < colors.length) {
-                $("body").animate({ backgroundColor: colors[i++ % colors.length] }, 200, cycleBackgroundColors);
+        $("body").keypress(function(event) {
+            if (event.which == 119) { // w is the winscreen shortcut
+                event.preventDefault();
+                winScreen();
             }
-        }
+        });
 
         var angle = 0;
         var xcenter = $(window).width() / 2;
