@@ -31,7 +31,7 @@
 function ShowAnswer() {
     if ($('.user').length === $('.received').length) {
         $("body").stop(true);
-        $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
+        $("body").animate({ backgroundColor: "#800080" }, 200);
         $(".user").delay(200).stop(true);
         $('.answerblock-' + $('#answer').val()).addClass("correct");
 

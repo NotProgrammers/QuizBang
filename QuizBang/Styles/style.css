@@ -2,14 +2,14 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 20px;
+    font-family: 'Yanone Kaffeesatz', "Comic Sans MS", cursive, sans-serif;
+    font-size: 24px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: lightblue;
+    background-color: purple;
     text-align: center;
     min-height: 400px; /* for good browsers*/
     min-width: 600px; /* for good browsers*/
@@ -19,7 +19,9 @@ body {
 body.started {
     background-color: lightpink;
 }
-
+h1, h2 {
+    color: #028bae;
+}
 #outer {
     height: 100%;
     width: 100%;
@@ -71,18 +73,18 @@ body.started {
     position: absolute;
     left: 50%;
     top: 50%;
-    /*background-color: white;*/
     background-image: url('/Images/clearbubble.png');
     background-repeat: no-repeat;
-
     width: 150px;
     height: 150px;
     -webkit-border-radius: 75px;
     -moz-border-radius: 75px;
     border-radius: 750px;
     margin: 0;
-    /*border: 3px solid silver;*/
     display: table;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
 }
 
 .user span {

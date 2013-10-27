@@ -59,6 +59,8 @@ function startScreen() {
 
     // stop the body
     $('body').stop(true);
+    // animate back to main colour
+    $("body").animate({ backgroundColor: "#800080" }, 200);
     
     bubblesMain(new Object({
         type: 'radial',
@@ -103,10 +105,10 @@ function winScreen() {
 }
 
 function cycleQuestionBackgroundColors() {
-    var colors = ["#ccffcc", "#ffcccc", "#ADD8E6"];
+    var colors = ["#a010a0", "#800080"];
     var i = 0;
     while (i < colors.length) {
-        $("body").animate({ backgroundColor: colors[i++ % colors.length] }, 1000, cycleQuestionBackgroundColors);
+        $("body").animate({ backgroundColor: colors[i++ % colors.length] }, 3000, cycleQuestionBackgroundColors);
     }
 }
 

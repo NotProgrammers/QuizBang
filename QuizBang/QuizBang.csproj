@@ -149,6 +149,7 @@
     <Content Include="Images\answered-bubble.png" />
     <Content Include="Images\clearbubble.png" />
     <Content Include="Images\correct-answer-button.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\question-bubble.png" />
     <Content Include="Scripts\bubbles.js" />
     <Content Include="Scripts\countdownTimer.js" />
