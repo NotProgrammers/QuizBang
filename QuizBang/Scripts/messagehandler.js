@@ -5,7 +5,7 @@
             $('#' + from + ' span').html(message);
         }
         else {
-            $('body').prepend('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
+            $('#users').append('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
 
             distributeUsers();
             if ($('.user').length > 1) {
@@ -29,6 +29,7 @@
 
 function ShowAnswers() {
     // show correct answer if everyone has answered
+    $("body").animate({ backgroundColor: colors["lightblue"] }, 200);
     var numberOfUsers = $('.user').length;
     var usersThatHaveAnswered = $('.received').length;
 
