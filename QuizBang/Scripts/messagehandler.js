@@ -9,47 +9,48 @@
 
             distributeUsers();
             if ($('.user').length > 1) {
-                $('#waitingForPlayers').hide();
+                $("#waitingForPlayers").hide();
                 $('#startInstructions').show();
             }
         }
     }
     else if (window.quizMode == 'QUIZ') {
-        if (message.length < 2) {
+        var answerValidAndIsFirstAttempt = (message.length < 2) && ($('#' + from + ' .received').length === 0);
+        if (answerValidAndIsFirstAttempt) {
             $('#' + from).addClass('received');
             
-            if (message.toUpperCase() !== $('#answer').val()) {
+            var correctAnswer = $('#answer').val();
+            if (message.toUpperCase() !== correctAnswer) {
                 $('#' + from).addClass('incorrect');
             }
-            ShowAnswers();
             
+            // show correct answer if everyone has answered
+            $("body").stop(true);
+            $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
+
+            var numberOfUsers = $('.user').length;
+            var usersThatHaveAnswered = $('.received').length;
+            
+            if (numberOfUsers === usersThatHaveAnswered) {
+                $('.answerblock-' + correctAnswer).addClass("correct");
+                
+                // if no-one answers correctly, move to next question
+                if ($('.incorrect').length !== numberOfUsers) {
+                    $('.incorrect').animate({ opacity: 0 }, 1000, function () {
+                        $(this).remove();
+                        if ($(".incorrect:animated").length === 0)
+                            distributeUsers();
+                    });
+                }
+                
+                // give it 5 seconds before moving on
+                setTimeout(function () {
+                    $('.user').removeClass('incorrect');
+                    $('.answerblock-' + correctAnswer).removeClass("correct");
+                    
+                    nextQuestion();
+                }, 5000);
+            }
         }
-    }
-}
-
-function ShowAnswers() {
-    // show correct answer if everyone has answered
-    $("body").animate({ backgroundColor: colors["lightblue"] }, 200);
-    var numberOfUsers = $('.user').length;
-    var usersThatHaveAnswered = $('.received').length;
-
-    if (numberOfUsers === usersThatHaveAnswered) {
-        $('.answerblock-' + $('#answer').val()).addClass("correct");
-        $('#question-instruction').invisible();
-        // if no-one answers correctly, move to next question
-        if ($('.incorrect').length !== numberOfUsers) {
-            $('.incorrect').animate({ opacity: 0 }, 1000, function () {
-                $(this).remove();
-                if ($(".incorrect:animated").length === 0)
-                    distributeUsers();
-            });
-        }
-
-        // give it 5 seconds before moving on
-        setTimeout(function () {
-            $('.answerblock-' + $('#answer').val()).removeClass("correct");
-
-            nextQuestion();
-        }, 5000);
     }
 }
