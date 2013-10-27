@@ -60,10 +60,6 @@
                 orbitAnimation();
             }
             
-            function stopOrbiting() {
-                $(".user").stop(true, true);
-            }
-            
             function orbitAnimation() {
                 $(".user").each(function(index) {
                     radians[index] += 0.005;
@@ -82,7 +78,7 @@
             }
 
             function distributeUsers() {
-                stopOrbiting();
+                $(".user").stop(true);
                 radians = [];
                 var numberOfUsers = $(".user").length;
                 var interval = (2 * Math.PI) / numberOfUsers;

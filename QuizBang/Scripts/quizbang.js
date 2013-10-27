@@ -23,6 +23,7 @@ function nextQuestion() {
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
         $('#intro').hide();
+        startOrbiting();
         cycleQuestionBackgroundColors();
         $('#question').show();
         $('#question-instruction').visible();
