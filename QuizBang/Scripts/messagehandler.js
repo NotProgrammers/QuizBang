@@ -23,12 +23,12 @@
                 $('#' + from).addClass('incorrect');
             }
 
-            ShowAnswer();
+            showAnswer();
         }
     }
 }
 
-function ShowAnswer() {
+function showAnswer() {
     if ($('.user').length === $('.received').length) {
         $("body").stop(true);
         $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
@@ -37,12 +37,9 @@ function ShowAnswer() {
 
         // if no-one answers correctly, move to next question
         if ($('.incorrect').length !== $('.user').length) {
-            $('.incorrect').animate({ opacity: 0 }, 1000, function () {
-                $(this).remove();
-                if ($(".incorrect:animated").length === 0)
-                    distributeUsers();
-            });
+            removeUsers('.incorrect');
         }
+        
 
         // give it 5 seconds before moving on
         $('#question-instruction').invisible();
@@ -53,4 +50,14 @@ function ShowAnswer() {
             nextQuestion();
         }, 5000);
     }
+}
+
+function removeUsers(userSelector)
+{
+    $(userSelector).animate({ opacity: 0 }, 1000, function () {
+            $(this).remove();
+            if ($(userSelector+":animated").length === 0)
+                distributeUsers();
+        });
+    
 }

@@ -19,6 +19,12 @@ jQuery.fn.invisible = function () {
 };
 
 function nextQuestion() {
+    $(document).keypress(function (event) {
+        event.preventDefault();
+        var unansweredUsers = $('.user').not('.received');
+        unansweredUsers.addClass("incorrect").addClass("received");
+        showAnswer();
+    });
     if ($('.user').length > 1) {
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
@@ -52,8 +58,10 @@ function startScreen() {
             winScreen();
         }
         else if ($('.user').length > 1) {
-            event.preventDefault();
-            nextQuestion();
+            if (quizMode === 'REGISTRATION') {
+                event.preventDefault();
+                nextQuestion();
+            }
         }
     });
 
