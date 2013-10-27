@@ -5,7 +5,7 @@
             $('#' + from).html(message);
         }
         else {
-            $('#messageBox').append('<div id="' + from + '">' + message + '</div>');
+            $('#messageBox').append('<div id="' + from + '"><span>' + message + '</span></div>');
 
             distributeUsers();
             if ($('#messageBox div').length > 1) {

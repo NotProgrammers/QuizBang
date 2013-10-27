@@ -1,9 +1,9 @@
 ﻿
-/* mac hide \*/
 html, body {
     height: 100%;
     width: 100%;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 20px;
 }
 
 body {
@@ -77,6 +77,12 @@ body.started {
     border-radius: 750px;
     margin: 0;
     border: 3px solid silver;
+    display: table;
+}
+
+#messageBox div span {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #messageBox div.received {
@@ -110,7 +116,6 @@ body.started {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    font-size: 20px;
     text-align: left;
 }
 
