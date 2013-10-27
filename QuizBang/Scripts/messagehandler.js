@@ -18,35 +18,38 @@
         if (answerValidAndIsFirstAttempt) {
             $('#' + from).addClass('received');
             
-            var correctAnswer = $('#answer').val();
-            if (message.toUpperCase() !== correctAnswer) {
+           
+            if (message.toUpperCase() !== $('#answer').val()) {
                 $('#' + from).addClass('incorrect');
             }
             
             // show correct answer if everyone has answered
-            var numberOfUsers = $('.user').length;
-            var usersThatHaveAnswered = $('.received').length;
-            
-            if (numberOfUsers === usersThatHaveAnswered) {
-                $('.answerblock-' + correctAnswer).addClass("correct");
-                
-                // if no-one answers correctly, move to next question
-                if ($('.incorrect').length !== numberOfUsers) {
-                    $('.incorrect').animate({ opacity: 0 }, 1000, function () {
-                        $(this).remove();
-                        if ($(".incorrect:animated").length === 0)
-                            distributeUsers();
-                    });
-                }
-                
-                // give it 5 seconds before moving on
-                setTimeout(function () {
-                    $('.user').removeClass('incorrect');
-                    $('.answerblock-' + correctAnswer).removeClass("correct");
-                    
-                    nextQuestion();
-                }, 5000);
-            }
+
+            ShowAnswer();
         }
+    }
+}
+
+function ShowAnswer() {
+    if ($('.user').length === $('.received').length) {
+        $('.answerblock-' + $('#answer').val()).addClass("correct");
+
+        // if no-one answers correctly, move to next question
+        if ($('.incorrect').length !== $('.user').length) {
+            $('.incorrect').animate({ opacity: 0 }, 1000, function () {
+                $(this).remove();
+                if ($(".incorrect:animated").length === 0)
+                    distributeUsers();
+            });
+        }
+
+        // give it 5 seconds before moving on
+        $('#question-instruction').invisible();
+        setTimeout(function () {
+            $('.user').removeClass('incorrect');
+            $('.answerblock-' + $('#answer').val()).removeClass("correct");
+
+            nextQuestion();
+        }, 5000);
     }
 }
