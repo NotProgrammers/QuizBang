@@ -9,8 +9,6 @@
 <body>
     <div id="canvasBubbles"></div>
 
-    <div id="messageBox">
-    </div>
     <div id="outer">
         <div id="container">
             <div id="inner">
@@ -57,7 +55,7 @@
         var r = 385;
 
         function orbit() {
-            $("#messageBox div").each(function (index) {
+            $(".user").each(function (index) {
                 radians[index] += 0.005;
                 var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 75;
                 var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.75) - 75;
@@ -70,9 +68,9 @@
         }
 
         function distributeUsers() {
-            $("#messageBox div").stop(true, true);
+            $(".user").stop(true, true);
             radians = [];
-            var numberOfUsers = $("#messageBox div").length;
+            var numberOfUsers = $(".user").length;
             var interval = (2 * Math.PI) / numberOfUsers;
             for (var i = 0; i < numberOfUsers; i++) {
                 radians.push(interval * i);

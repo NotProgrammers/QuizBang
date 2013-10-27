@@ -65,7 +65,7 @@ body.started {
     overflow: hidden;
 }
 
-#messageBox div {
+.user {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -80,12 +80,12 @@ body.started {
     display: table;
 }
 
-#messageBox div span {
+.user span {
     display: table-cell;
     vertical-align: middle;
 }
 
-#messageBox div.received {
+.user.received {
     border-color:green;
 }
 
