@@ -86,7 +86,8 @@ body.started {
 }
 
 .user.received {
-    border-color:green;
+    background-color: wheat;
+    border-color: #333; 
 }
 
 #answers ul.left {
