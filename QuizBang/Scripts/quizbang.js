@@ -49,8 +49,8 @@ function startScreen() {
         maxSpeed: 500,
         minSize: 50,
         maxSize: 150,
-        num: 100,
-        colors: new Array('#FFFFFF', '#BBBBBB')
+        num: 150,
+        colors: new Array('#FFFFFF', '#BBBBBB', '#999999')
     }));
 }
 
