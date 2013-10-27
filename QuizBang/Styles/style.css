@@ -76,11 +76,11 @@ body.started {
     -moz-border-radius: 75px;
     border-radius: 750px;
     margin: 0;
+    border: 3px solid silver;
 }
 
-#messageBox li.received {
-    background-color:lightseagreen;
-
+#messageBox div.received {
+    border-color:green;
 }
 
 #answers ul.left {
