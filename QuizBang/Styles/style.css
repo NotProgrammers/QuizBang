@@ -20,7 +20,7 @@ body.started {
     background-color: lightpink;
 }
 h1, h2 {
-    color: #028bae;
+    color: #7624C0;
 }
 #outer {
     height: 100%;
@@ -43,16 +43,22 @@ h1, h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    /*background-color: white;
-    border: 3px solid silver;
-    -webkit-border-radius: 400px / 200px;
-    -moz-border-radius: 400px / 200px;
-    border-radius: 400px / 200px;*/
     background-image: url('/Images/question-bubble.png');
     background-repeat: no-repeat;
     display: table;
 }
 
+#logo {
+    margin-top: 20px;
+}
+
+#instruction {
+    margin-top: 10px;
+}
+
+#question-text {
+    margin-bottom: 10px;
+}
 .centred-content {
     text-align: center;
     display: table-cell;
@@ -120,15 +126,16 @@ h1, h2 {
 #answers li {
     margin: 10px;
     padding: 4px;
-    border: 2px solid #32ccca;
+    border: 2px solid #7624C0;
     width: 238px;
-    height: 2.8em;
+    height: 2.5em;
     overflow: hidden;
-    background-color: #32ccca;
+    background-color: #3E1464;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     text-align: left;
+    color: white;
 }
 
 #answers .correct {
