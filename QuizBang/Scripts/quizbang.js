@@ -11,17 +11,22 @@ $(function () {
 });
 
 function nextQuestion() {
-    window.quizMode = 'QUIZ';
-    $('.user').removeClass('received');
-    $('#intro').hide();
-    $('#question').show();
-    var question = new QuestionSelector().getNext();
-    $('#question-text').html(question.question);
-    $('#answer-a').html(question.answerA);
-    $('#answer-b').html(question.answerB);
-    $('#answer-c').html(question.answerC);
-    $('#answer-d').html(question.answerD);
-    $('#answer').val(question.correct_answer);
+    if ($('.user').length > 1) {
+        window.quizMode = 'QUIZ';
+        $('.user').removeClass('received');
+        $('#intro').hide();
+        $('#question').show();
+        var question = new QuestionSelector().getNext();
+        $('#question-text').html(question.question);
+        $('#answer-a').html(question.answerA);
+        $('#answer-b').html(question.answerB);
+        $('#answer-c').html(question.answerC);
+        $('#answer-d').html(question.answerD);
+        $('#answer').val(question.correct_answer);
+    }
+    else if ($('.user').length === 1) {
+        winScreen();
+    }
 }
 
 function startScreen() {
@@ -34,7 +39,8 @@ function startScreen() {
         if (event.which == 119) { // w is the winscreen shortcut
             event.preventDefault();
             winScreen();
-        } else {
+        }
+        else if ($('.user').length > 1) {
             event.preventDefault();
             nextQuestion();
         }
@@ -56,10 +62,12 @@ function startScreen() {
 
 function winScreen() {
     window.quizMode = 'WIN';
-    
+    var winnerName = $('.user span').html();
+    $('#winner').html(winnerName);
     $('#intro').hide();
     $('#question').hide();
     $('#win-screen').show();
+    
     
     $(document).keypress(function (event) {
         startScreen();
