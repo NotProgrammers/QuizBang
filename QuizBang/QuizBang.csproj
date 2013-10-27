@@ -151,12 +151,14 @@
     <Content Include="Images\correct-answer-button.png" />
     <Content Include="Images\question-bubble.png" />
     <Content Include="Scripts\bubbles.js" />
+    <Content Include="Scripts\countdownTimer.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.color-2.1.2.js" />
     <Content Include="Scripts\jquery.color-2.1.2.min.js" />
     <Content Include="Scripts\jquery.color.svg-names-2.1.2.js" />
     <Content Include="Scripts\jquery.color.svg-names-2.1.2.min.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
     <Content Include="Scripts\jquery.signalR-2.0.0.js" />
     <Content Include="Scripts\jquery.signalR-2.0.0.min.js" />
     <Content Include="Scripts\messagehandler.js" />

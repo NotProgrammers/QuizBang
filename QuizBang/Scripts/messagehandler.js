@@ -18,7 +18,6 @@
         var answerValidAndIsFirstAttempt = (message.length < 2) && ($('#' + from + ' .received').length === 0);
         if (answerValidAndIsFirstAttempt) {
             $('#' + from).addClass('received');
-            
            
             if (message.toUpperCase() !== $('#answer').val()) {
                 $('#' + from).addClass('incorrect');
@@ -30,9 +29,10 @@
 }
 
 function ShowAnswer() {
-    $("body").stop(true);
-    $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
     if ($('.user').length === $('.received').length) {
+        $("body").stop(true);
+        $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
+        $(".user").delay(200).stop(true);
         $('.answerblock-' + $('#answer').val()).addClass("correct");
 
         // if no-one answers correctly, move to next question

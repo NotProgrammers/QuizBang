@@ -9,7 +9,6 @@
     <body>
         <div id="users"></div>
         <div id="canvasBubbles"></div>
-
         <div id="outer">
             <div id="container">
                 <div id="inner">
@@ -57,28 +56,36 @@
             var radians = [];
             var r = 500;
 
-            function orbit() {
-                $(".user").each(function (index) {
+            function startOrbiting() {
+                orbitAnimation();
+            }
+            
+            function orbitAnimation() {
+                $(".user").each(function(index) {
                     radians[index] += 0.005;
                     var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 78;
                     var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.60) - 78;
+                    $(this).animate({ top: newTop, left: newLeft }, 10, orbitAnimation);
+                });
+            }
 
-                    $(this).animate({
-                        top: newTop,
-                        left: newLeft,
-                    });
+            function resetOrbits() {
+                $(".user").each(function (index) {
+                    var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 78;
+                    var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.60) - 78;
+                    $(this).animate({ top: newTop, left: newLeft });
                 });
             }
 
             function distributeUsers() {
-                $(".user").stop(true, true);
+                $(".user").stop(true);
                 radians = [];
                 var numberOfUsers = $(".user").length;
                 var interval = (2 * Math.PI) / numberOfUsers;
                 for (var i = 0; i < numberOfUsers; i++) {
                     radians.push(interval * i);
                 }
-                orbit();
+                resetOrbits();
             }
 
             $(function () {
