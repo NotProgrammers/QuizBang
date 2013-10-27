@@ -19,6 +19,10 @@
             if (message.toUpperCase() !== correctAnswer) {
                 $('#' + from).addClass('incorrect');
             }
+            
+            if ($('#messageBox div').length === $('.received').length) {
+                alert(correctAnswer);
+            }
         }
-    } 
+    }
 }
