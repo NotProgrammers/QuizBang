@@ -14,7 +14,8 @@
         }
     }
     else if (window.quizMode == 'QUIZ') {
-        if (message.length < 2) {
+        var answerValidAndIsFirstAttempt = (message.length < 2) && ($('#' + from + ' .received').length === 0);
+        if (answerValidAndIsFirstAttempt) {
             $('#' + from).addClass('received');
             
             var correctAnswer = $('#answer').val();
@@ -40,6 +41,7 @@
                 
                 // give it 5 seconds before moving on
                 setTimeout(function () {
+                    $('.user').removeClass('incorrect');
                     $('.answerblock-' + correctAnswer).removeClass("correct");
                     
                     nextQuestion();
