@@ -20,7 +20,7 @@ var questions = [
         correct_answer: 'A'
     },
     {
-        question: 'Which of the following comic book characters can be found on a HackManchester pinball machine?',
+        question: 'Which of the following comic book characters<br/>can be found on a HackManchester pinball machine?',
         answerA: 'Superman',
         answerB: 'Wolverine',
         answerC: 'The Incredible Hulk',
@@ -28,7 +28,7 @@ var questions = [
         correct_answer: 'B'
     },
     {
-        question: 'In which gallery at the Museum of Science and Industry will you find the Beyer-Garratt articulated steam locomotive?',
+        question: 'In which gallery at MOSI will you find<br/>the Beyer-Garratt articulated steam locomotive?',
         answerA: 'The Age of Steam Gallery',
         answerB: 'The Rail Yard',
         answerC: 'The Revolution Manchester Gallery',
@@ -36,7 +36,7 @@ var questions = [
         correct_answer: 'D'
     },
     {
-        question: 'How many packs of Refreshing Wipes did you get in your HackManchester comfort kit?',
+        question: 'How many packs of Refreshing Wipes<br/>did you get in your HackManchester comfort kit?',
         answerA: '1',
         answerB: '2',
         answerC: '3',
@@ -68,7 +68,7 @@ var questions = [
         correct_answer: 'C'
     },
     {
-        question: 'What part of the body does a turtle use to breathe?',
+        question: 'What part of the body does a<br/>turtle use to breathe?',
         answerA: 'Proboscus',
         answerB: 'Shell lining',
         answerC: 'Nasal cavity',
@@ -76,7 +76,7 @@ var questions = [
         correct_answer: 'D'
     },
     {
-        question: 'The Manchester City Council motto is Concilio et Labore. What does it mean?',
+        question: 'The Manchester City Council motto is<br/>Concilio et Labore. What does it mean?',
         answerA: 'Four lighters for a pound',
         answerB: 'Pride in Battle',
         answerC: 'By wisdom and effort',
@@ -84,7 +84,7 @@ var questions = [
         correct_answer: 'C'
     },
     {
-        question: 'Nottingham is well known for its violent gangs, but who was tasked with tackling legendary 12th century criminals Robin Hood and his Merry Men?',
+        question: 'Nottingham is known for its violent gangs, but who<br/>tackled 12th century criminals Robin Hood and his Merry Men?',
         answerA: 'Nottinghamshire Constabulary',
         answerB: 'Operation Trident',
         answerC: 'The Sheriff of Nottingham',
@@ -92,7 +92,7 @@ var questions = [
         correct_answer: 'C'
     },
     {
-        question: 'Which of the following is Coronation Street\'s longest serving character?',
+        question: 'Which of the following is Coronation Street\'s<br/>longest serving character?',
         answerA: 'Ken Barlow',
         answerB: 'Samir Rashid',
         answerC: 'Vera Duckworth',
@@ -108,7 +108,7 @@ var questions = [
         correct_answer: 'D'
     },
     {
-        question: 'Which of the following was the Happy Mondays\' highest charting UK single?',
+        question: 'Which of the following was the<br/>Happy Mondays\' highest charting UK single?',
         answerA: 'Maaaaaaaaate',
         answerB: 'Step On',
         answerC: 'Bob\'s Yer Uncle',
@@ -116,7 +116,7 @@ var questions = [
         correct_answer: 'B'
     },
     {
-        question: 'What was the first song ever sung by a computer?',
+        question: 'What was the first song<br/>ever sung by a computer?',
         answerA: 'Daisy Bell',
         answerB: 'Bangarang feat. Sirah',
         answerC: 'Mary Had a Little Lamb',
