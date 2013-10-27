@@ -23,6 +23,10 @@ function nextQuestion() {
 }
 
 function winScreen() {
+    $('#intro').hide();
+    $('#question').hide();
+    $('#win-screen').show();
+
     bubblesMain(new Object({
         type: 'linear',
         revolve: 'center',
