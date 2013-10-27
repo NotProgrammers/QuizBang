@@ -10,12 +10,21 @@ $(function () {
     startScreen();
 });
 
+jQuery.fn.visible = function () {
+    return this.css('visibility', 'visible');
+};
+
+jQuery.fn.invisible = function () {
+    return this.css('visibility', 'hidden');
+};
+
 function nextQuestion() {
     if ($('.user').length > 1) {
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
         $('#intro').hide();
         $('#question').show();
+        $('#question-instruction').visible();
         var question = new QuestionSelector().getNext();
         $('#question-text').html(question.question);
         $('#answer-a').html(question.answerA);
