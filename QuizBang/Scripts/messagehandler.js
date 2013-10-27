@@ -24,14 +24,17 @@
             
             // show correct answer if everyone has answered
             var numberOfUsers = $('.user').length;
-            var receivedDivs = $('.received').length;
+            var usersThatHaveAnswered = $('.received').length;
             
-            if (numberOfUsers === receivedDivs) {
+            if (numberOfUsers === usersThatHaveAnswered) {
                 $('.answerblock-' + correctAnswer).addClass("correct");
+                
+                $('.incorrect').remove();
                 
                 // give it 5 seconds before moving on
                 setTimeout(function () {
                     $('.answerblock-' + correctAnswer).removeClass("correct");
+                    
                     nextQuestion();
                 }, 5000);
             }
