@@ -25,12 +25,7 @@ function nextQuestion() {
         $('#answer').val(question.correct_answer);
     }
     else if ($('.user').length === 1) {
-        window.quizMode = 'WIN';
-        $('#intro').hide();
-        $('#question').hide();
-        $('#win-screen').show();
-        var winnerName = $('.user span').html();
-        $('#winner').html(winnerName);
+        winScreen();
     }
 }
 
@@ -44,7 +39,8 @@ function startScreen() {
         if (event.which == 119) { // w is the winscreen shortcut
             event.preventDefault();
             winScreen();
-        } else {
+        }
+        else if ($('.user').length > 1) {
             event.preventDefault();
             nextQuestion();
         }
@@ -66,10 +62,12 @@ function startScreen() {
 
 function winScreen() {
     window.quizMode = 'WIN';
-    
+    var winnerName = $('.user span').html();
+    $('#winner').html(winnerName);
     $('#intro').hide();
     $('#question').hide();
     $('#win-screen').show();
+    
     
     $(document).keypress(function (event) {
         startScreen();
