@@ -68,20 +68,6 @@ var questions = [
         correct_answer: 'C'
     },
     {
-        question: 'As I was going to St. Ives,<br />'
-            + 'I met a man with seven wives,<br />'
-            + 'Each wife had seven sacks,<br />'
-            + 'Each sack had seven cats,<br />'
-            + 'Each cat had seven kits:<br />'
-            + 'Kits, cats, sacks, and wives,<br />'
-            + 'How many were there going to St. Ives?',
-        answerA: '1',
-        answerB: '1542',
-        answerC: '2802',
-        answerD: 'Jeremy Irons',
-        correct_answer: 'A'
-    },
-    {
         question: 'What part of the body does a turtle use to breathe?',
         answerA: 'Proboscus',
         answerB: 'Shell lining',
@@ -90,7 +76,7 @@ var questions = [
         correct_answer: 'D'
     },
     {
-        question: 'The Mancherster City Council motto is Concilio et Labore. What does it mean?',
+        question: 'The Manchester City Council motto is Concilio et Labore. What does it mean?',
         answerA: 'Four lighters for a pound',
         answerB: 'Pride in Battle',
         answerC: 'By wisdom and effort',
@@ -118,7 +104,7 @@ var questions = [
         answerA: 'What?',
         answerB: 'Who?',
         answerC: 'Eh?',
-        answerD: 'You want me to say \'what\' right? Like, I don\'t get it?',
+        answerD: 'You want me to say \'what\' right?',
         correct_answer: 'D'
     },
     {

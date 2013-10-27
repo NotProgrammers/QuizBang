@@ -28,64 +28,6 @@
         function registerTestUsers() {
             testUsers = new Array();
             $('#registered-test-users').empty();
-            
-            var baseTestUsers = [
-                {
-                    mobile: "07875111111",
-                    name: "Alex"
-                },
-                {
-                    mobile: "07875111112",
-                    name: "Pat"
-                },
-                {
-                    mobile: "07875111113",
-                    name: "Sam"
-                },
-                {
-                    mobile: "07875111114",
-                    name: "Nikki"
-                },
-                {
-                    mobile: "07875111115",
-                    name: "Neil"
-                },
-                {
-                    mobile: "07875111116",
-                    name: "Oli"
-                }
-                //,
-                //{
-                //    mobile: "07875111117",
-                //    name: "James"
-                //},
-                //{
-                //    mobile: "07875111118",
-                //    name: "Jonathan"
-                //},
-                //{
-                //    mobile: "07875111119",
-                //    name: "Andrew"
-                //},
-                //{
-                //    mobile: "07875111120",
-                //    name: "Rupert"
-                //},
-                //{
-                //    mobile: "07875111121",
-                //    name: "Henry"
-                //},
-                //{
-                //    mobile: "07875111122",
-                //    name: "Winston"
-                //}
-            ];
-            
-            baseTestUsers.forEach(function(testUser) {
-                registerTestUser(testUser.mobile, testUser.name);
-                
-                console.log("Registered:" + testUser.mobile + " " + testUser.name);
-            });
             registerTestUser("0787511111" + i++, "Some guy");
         }
 

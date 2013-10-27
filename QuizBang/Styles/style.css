@@ -125,12 +125,15 @@ body.started {
 
 #answers li span.answer {
     display: inline-block;
-    width: 180px;
+    width: 170px;
 }
 
 #answers li span.answer-letter {
     display: inline-block;
-    vertical-align: top;
+    vertical-align:central;
+    font-size: 2.0em;
+    font-weight: bold;
+    width: 30px;
 }
 
 #advance {
