@@ -52,13 +52,13 @@
         var xcenter = $(window).width() / 2;
         var ycenter = $(window).height() / 2;
         var radians = [];
-        var r = 385;
+        var r = 500;
 
         function orbit() {
             $(".user").each(function (index) {
                 radians[index] += 0.005;
                 var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 78;
-                var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.75) - 78;
+                var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.60) - 78;
 
                 $(this).animate({
                     top: newTop,

@@ -36,16 +36,16 @@ body.started {
 }
 
 #inner {
-    width: 600px;
+    width: 800px;
     height: 400px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     border: 3px solid silver;
-    -webkit-border-radius: 300px / 200px;
-    -moz-border-radius: 300px / 200px;
-    border-radius: 300px / 200px;
+    -webkit-border-radius: 400px / 200px;
+    -moz-border-radius: 400px / 200px;
+    border-radius: 400px / 200px;
     display: table;
 }
 
@@ -53,7 +53,7 @@ body.started {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    padding: 20px 40px;
+    padding: 20px 50px;
 }
 
 #canvasBubbles {
@@ -109,7 +109,7 @@ body.started {
     margin: 10px;
     padding: 5px;
     border: 2px solid #333;
-    width: 200px;
+    width: 280px;
     height: 3.0em;
     overflow: hidden;
     background-color: wheat;
@@ -123,21 +123,13 @@ body.started {
     background-color:gold;
 }
 
-#answers li span.answer {
-    display: inline-block;
-    width: 170px;
+#answers li span {
+    display: table-cell;
+    vertical-align:middle;
 }
 
 #answers li span.answer-letter {
-    display: inline-block;
-    vertical-align:central;
     font-size: 2.0em;
     font-weight: bold;
-    width: 30px;
-}
-
-#advance {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    padding-right: 10px;
 }
