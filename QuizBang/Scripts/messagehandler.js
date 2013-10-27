@@ -5,10 +5,10 @@
             $('#' + from).html(message);
         }
         else {
-            $('#messageBox').append('<div id="' + from + '">' + message + '</div>');
+            $('body').append('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
 
             distributeUsers();
-            if ($('#messageBox div').length > 1) {
+            if ($('.user').length > 1) {
                 $('#startInstructions').show();
             }
         }
@@ -20,9 +20,9 @@
             if (message.toUpperCase() !== correctAnswer) {
                 $('#' + from).addClass('incorrect');
             }
-            var messageBoxDivs = $('#messageBox div').length;
+            var numberOfUsers = $('.user').length;
             var receivedDivs = $('.received').length;
-            if (messageBoxDivs === receivedDivs) {
+            if (numberOfUsers === receivedDivs) {
                 $('.answerblock-' + correctAnswer).addClass("correct");
             }
 
