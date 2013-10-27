@@ -130,7 +130,7 @@ body.started {
 
 #answers li span.answer-letter {
     display: inline-block;
-    vertical-align:central;
+    vertical-align:top;
     font-size: 2.0em;
     font-weight: bold;
     width: 30px;

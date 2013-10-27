@@ -29,7 +29,10 @@
             if (numberOfUsers === usersThatHaveAnswered) {
                 $('.answerblock-' + correctAnswer).addClass("correct");
                 
-                $('.incorrect').remove();
+                // if no-one answers correctly, move to next question
+                if ($('.incorrect').length !== numberOfUsers) {
+                    $('.incorrect').remove();
+                }
                 
                 // give it 5 seconds before moving on
                 setTimeout(function () {

@@ -16,7 +16,8 @@
         function registerTestUser(mobile, name) {
             testUsers.push({ mobile: mobile, name: name });
             $.get("/InboundSMS/SMSReceived", { from: mobile, content: name });
-            $('#registered-test-users').append('<li>' + name + ' - ' + mobile + '</li>');
+            $('#registered-test-users')
+                .append('<li>' + name + ' - ' + mobile + '</li>');
         }
         
         function submitAnswer(mobile, answer) {
@@ -28,13 +29,28 @@
         function registerTestUsers() {
             testUsers = new Array();
             $('#registered-test-users').empty();
-            registerTestUser("0787511111" + i++, "Some guy");
+            registerTestUser("078751111" + i++, "Guy " + i);
         }
 
         function answerAll() {
             testUsers.forEach(function (testUser) {
-                submitAnswer(testUser.mobile, (testUser.mobile % 4) + 1);
+                submitAnswer(testUser.mobile, getLetter((testUser.mobile % 4) + 1));
             });
+        }
+        
+        function getLetter(number) {
+            switch(number) {
+                case 1:
+                    return "A";
+                case 2:
+                    return "B";
+                case 3:
+                    return "C";
+                case 4:
+                    return "D";
+                default:
+                    throw "Invalid response number";
+            }
         }
         
         function answerAllButOne(answer, oneOtherAnswer) {
@@ -53,6 +69,9 @@
             console.log("document loaded");
             $('#register-test-users').click(function() {
                 registerTestUsers();
+            });
+            $('#register-one-user').click(function () {
+                registerTestUser("078751111" + i++, "Guy " + i);
             });
             $('#answer-all').click(function () {
                 answerAll();
@@ -77,6 +96,7 @@
         <fieldset>
             <legend>A test does what?</legend>
             <input id="register-test-users" type="button" value="Register a test user" />
+            <input id="register-one-user" type="button" value="Register one test user" />
             <input id="answer-all" type="button" value="Answer 1,2,3 and 4 equally"/>
             <input id="answer-1-and-one-2" type="button" value="Answer A and one B"/>
             <input id="answer-2-and-one-3" type="button" value="Answer B and one C"/>
