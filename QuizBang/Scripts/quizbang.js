@@ -24,6 +24,7 @@ function nextQuestion() {
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
         $('#intro').hide();
+        startOrbiting();
         cycleQuestionBackgroundColors();
         $('#question').show();
         $('#question-instruction').visible();
@@ -57,6 +58,7 @@ function startScreen() {
         }
     });
 
+    // stop the body
     $('body').stop(true);
     
     bubblesMain(new Object({
@@ -74,13 +76,16 @@ function startScreen() {
 function winScreen() {
     window.quizMode = 'WIN';
     var winnerName = $('.user span').html();
+    var winnerMobile = $('.user').attr('id');
     $('#winner').html(winnerName);
     $('#intro').hide();
     $('#question').hide();
     $('.user').hide();
     $('#win-screen').show();
-    
-    
+
+    // send the winner an SMS
+    $.get('/OutboundSMS/SendSMS', { to: winnerMobile, message: 'Thaaaat\'s QuizBang!\n\nYou won the quiz and have wowed the world with your superior trivia knowledge. Well done you.' });
+
     $(document).keypress(function (event) {
         startScreen();
     });
