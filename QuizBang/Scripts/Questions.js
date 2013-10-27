@@ -28,7 +28,7 @@ var questions = [
         correct_answer: 'B'
     },
     {
-        question: 'In which gallery at the MOSI will you<br/>find the Beyer-Garratt articulated steam locomotive?',
+        question: 'In which gallery at MOSI will you find<br/>the Beyer-Garratt articulated steam locomotive?',
         answerA: 'The Age of Steam Gallery',
         answerB: 'The Rail Yard',
         answerC: 'The Revolution Manchester Gallery',
