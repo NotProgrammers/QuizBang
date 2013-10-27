@@ -25,6 +25,11 @@
             if (messageBoxDivs === receivedDivs) {
                 $('.answerblock-' + correctAnswer).addClass("correct");
             }
+
+            setTimeout(function() {
+                $('.answerblock-' + correctAnswer).removeClass("correct");
+                nextQuestion();
+            }, 3000);
         }
     }
 }
