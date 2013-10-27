@@ -20,8 +20,8 @@
             if (message.toUpperCase() !== $('#answer').val()) {
                 $('#' + from).addClass('incorrect');
             }
-
             ShowAnswers();
+            
         }
     }
 }
@@ -36,8 +36,11 @@ function ShowAnswers() {
         $('#question-instruction').invisible();
         // if no-one answers correctly, move to next question
         if ($('.incorrect').length !== numberOfUsers) {
-            $('.incorrect').animate({ opacity: 0 }, 5000, function () { $(this).remove(); });
-            distributeUsers();
+            $('.incorrect').animate({ opacity: 0 }, 1000, function () {
+                $(this).remove();
+                if ($(".incorrect:animated").length === 0)
+                    distributeUsers();
+            });
         }
 
         // give it 5 seconds before moving on
