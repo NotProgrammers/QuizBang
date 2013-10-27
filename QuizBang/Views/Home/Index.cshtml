@@ -6,90 +6,91 @@
     <title>QuizBang!</title>
 </head>
 
-<body>
-    <div id="canvasBubbles"></div>
+    <body>
+        <div id="users"></div>
+        <div id="canvasBubbles"></div>
 
-    <div id="outer">
-        <div id="container">
-            <div id="inner">
-                <div id="intro" class="centred-content">
-                    <h1>QuizBang!</h1>
-                    <h2>Text your name to 07860 033103 to enter</h2>
-                    <p id="waitingForPlayers">Waiting for players</p>
-                    <p id="startInstructions" style="display: none;">Press any key to start quiz!</p>
-                </div>
-                <input type="hidden" id="answer" />
-                <div id="question" class="centred-content" style="display: none;">
-                    <h2 id="question-text">What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
-                    <div id="answers">
-                        <ul class="left">
-                            <li class="answerblock answerblock-A"><span class="answer-letter">A</span><span id="answer-a" class="answer"></span></li>
-                            <li class="answerblock answerblock-C"><span class="answer-letter">C</span><span id="answer-c" class="answer"></span></li>
-                        </ul>
-                        <ul class="right">
-                            <li class="answerblock answerblock-B"><span class="answer-letter">B</span><span id="answer-b" class="answer"></span></li>
-                            <li class="answerblock answerblock-D"><span class="answer-letter">D</span><span id="answer-d" class="answer"></span></li>
-                        </ul>
-                        <h2 id="question-instruction">Text A, B, C or D now!</h2>
+        <div id="outer">
+            <div id="container">
+                <div id="inner">
+                    <div id="intro" class="centred-content">
+                        <h1>QuizBang!</h1>
+                        <h2>Text your name to 07860 033103 to enter</h2>
+                        <h2 id="waitingForPlayers">Waiting for players</h2>
+                        <h2 id="startInstructions" style="display: none;">Press any key to start quiz!</h2>
                     </div>
-                </div>
-                <div id="win-screen" class="centred-content" style="display: none;">
-                    <h1 id="winner"></h1>
-                    <h2>is the winner!</h2>
-                    <h2>Thanks for playing!</h2>
+                    <input type="hidden" id="answer" />
+                    <div id="question" class="centred-content" style="display: none;">
+                        <h2 id="question-text">What is the answer to this question that has lots of words in it and goes onto several lines like in this example right here?</h2>
+                        <div id="answers">
+                            <ul class="left">
+                                <li class="answerblock answerblock-A"><span class="answer-letter">A</span><span id="answer-a" class="answer"></span></li>
+                                <li class="answerblock answerblock-C"><span class="answer-letter">C</span><span id="answer-c" class="answer"></span></li>
+                            </ul>
+                            <ul class="right">
+                                <li class="answerblock answerblock-B"><span class="answer-letter">B</span><span id="answer-b" class="answer"></span></li>
+                                <li class="answerblock answerblock-D"><span class="answer-letter">D</span><span id="answer-d" class="answer"></span></li>
+                            </ul>
+                            <h2 id="question-instruction">Text A, B, C or D now!</h2>
+                        </div>
+                    </div>
+                    <div id="win-screen" class="centred-content" style="display: none;">
+                        <h1 id="winner"></h1>
+                        <h2>is the winner!</h2>
+                        <h2>Thanks for playing!</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="~/Scripts/questions.js" type="text/javascript"></script>
-    <script src="~/Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/jquery.color-2.1.2.min.js" type="text/javascript"></script>
-    <script src="~/Scripts/jquery.signalR-2.0.0.min.js" type="text/javascript"></script>
-    <script src="/signalr/hubs" type="text/javascript"></script>
-    <script src="~/Scripts/bubbles.js" type="text/javascript"></script>
-    <script src="~/Scripts/quizbang.js" type="text/javascript"></script>
-    <script src="~/Scripts/messagehandler.js" type="text/javascript"></script>
-    <script>
-        var xcenter = $(window).width() / 2;
-        var ycenter = $(window).height() / 2;
-        var radians = [];
-        var r = 500;
+        <script src="~/Scripts/questions.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.color-2.1.2.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.signalR-2.0.0.min.js" type="text/javascript"></script>
+        <script src="/signalr/hubs" type="text/javascript"></script>
+        <script src="~/Scripts/bubbles.js" type="text/javascript"></script>
+        <script src="~/Scripts/quizbang.js" type="text/javascript"></script>
+        <script src="~/Scripts/messagehandler.js" type="text/javascript"></script>
+        <script>
+            var xcenter = $(window).width() / 2;
+            var ycenter = $(window).height() / 2;
+            var radians = [];
+            var r = 500;
 
-        function orbit() {
-            $(".user").each(function (index) {
-                radians[index] += 0.005;
-                var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 78;
-                var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.60) - 78;
+            function orbit() {
+                $(".user").each(function (index) {
+                    radians[index] += 0.005;
+                    var newLeft = Math.floor(xcenter + (r * Math.cos(radians[index]))) - 78;
+                    var newTop = Math.floor(ycenter + (r * Math.sin(radians[index])) * 0.60) - 78;
 
-                $(this).animate({
-                    top: newTop,
-                    left: newLeft,
+                    $(this).animate({
+                        top: newTop,
+                        left: newLeft,
+                    });
                 });
-            });
-        }
-
-        function distributeUsers() {
-            $(".user").stop(true, true);
-            radians = [];
-            var numberOfUsers = $(".user").length;
-            var interval = (2 * Math.PI) / numberOfUsers;
-            for (var i = 0; i < numberOfUsers; i++) {
-                radians.push(interval * i);
             }
-            orbit();
-        }
 
-        $(function () {
-            flashWaitingForPlayersMessage();
-        });
-        
-        function flashWaitingForPlayersMessage() {
-            $("#waitingForPlayers").animate({ opacity: 0.2 }, 1000, function() {
-                $(this).animate({ opacity: 1 }, 1000, function() {
-                    flashWaitingForPlayersMessage();
-                });
+            function distributeUsers() {
+                $(".user").stop(true, true);
+                radians = [];
+                var numberOfUsers = $(".user").length;
+                var interval = (2 * Math.PI) / numberOfUsers;
+                for (var i = 0; i < numberOfUsers; i++) {
+                    radians.push(interval * i);
+                }
+                orbit();
+            }
+
+            $(function () {
+                flashWaitingForPlayersMessage();
             });
-        }
-    </script>
-</body>
+        
+            function flashWaitingForPlayersMessage() {
+                $("#waitingForPlayers").animate({ opacity: 0.2 }, 1000, function() {
+                    $(this).animate({ opacity: 1 }, 1000, function() {
+                        flashWaitingForPlayersMessage();
+                    });
+                });
+            }
+        </script>
+    </body>
 </html>

@@ -5,10 +5,11 @@
             $('#' + from + ' span').html(message);
         }
         else {
-            $('body').prepend('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
+            $('#users').append('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
 
             distributeUsers();
             if ($('.user').length > 1) {
+                $("#waitingForPlayers").hide();
                 $('#startInstructions').show();
             }
         }
@@ -22,8 +23,6 @@
             if (message.toUpperCase() !== $('#answer').val()) {
                 $('#' + from).addClass('incorrect');
             }
-            
-            // show correct answer if everyone has answered
 
             ShowAnswer();
         }
@@ -31,6 +30,8 @@
 }
 
 function ShowAnswer() {
+    $("body").stop(true);
+    $("body").animate({ backgroundColor: "#ADD8E6" }, 200);
     if ($('.user').length === $('.received').length) {
         $('.answerblock-' + $('#answer').val()).addClass("correct");
 
