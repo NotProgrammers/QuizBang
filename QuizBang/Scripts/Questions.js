@@ -15,8 +15,8 @@ var questions = [
         question: 'SignalR is a ...',
         answerA: 'Programming framework',
         answerB: 'Refreshing minty toothpaste',
-        answerC: 'Ruby',
-        answerD: 'C hash',
+        answerC: 'A board game about trains',
+        answerD: 'A WWII code breaking device',
         correct_answer: 'A'
     },
     {
