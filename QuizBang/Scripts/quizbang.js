@@ -20,7 +20,6 @@ jQuery.fn.invisible = function () {
 
 function nextQuestion() {
     if ($('.user').length > 1) {
-        ShowCountdown();
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
         $('#intro').hide();
