@@ -2,7 +2,7 @@
 
     if (window.quizMode === 'REGISTRATION') {
         if ($('#' + from).length > 0) {
-            $('#' + from).html(message);
+            $('#' + from + ' span').html(message);
         }
         else {
             $('body').prepend('<div class="user" id="' + from + '"><span>' + message + '</span></div>');
