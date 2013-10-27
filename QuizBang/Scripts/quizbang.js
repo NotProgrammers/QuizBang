@@ -4,7 +4,17 @@ $(function () {
     var quiz = $.connection.quizHub;
 
     quiz.client.broadcastMessage = handleMessage;
-    $(document).keypress(nextQuestion);
+ 
+    $(document).keypress(function (event) {
+        if (event.which == 119) { // w is the winscreen shortcut
+            event.preventDefault();
+            winScreen();
+        } else {
+            event.preventDefault();
+            nextQuestion();
+        }
+    });
+    
     $.connection.hub.start();
 });
 
