@@ -24,6 +24,7 @@
             $('#submitted-answers').prepend('<li>' + name + ' - ' + mobile + ' - ' + answer + '</li>');
         }
 
+        var i = 0;
         function registerTestUsers() {
             testUsers = new Array();
             $('#registered-test-users').empty();
@@ -85,6 +86,7 @@
                 
                 console.log("Registered:" + testUser.mobile + " " + testUser.name);
             });
+            registerTestUser("0787511111" + i++, "Some guy");
         }
 
         function answerAll() {
@@ -132,7 +134,7 @@
     <div>
         <fieldset>
             <legend>A test does what?</legend>
-            <input id="register-test-users" type="button" value="Register 6 test users"/>
+            <input id="register-test-users" type="button" value="Register a test user" />
             <input id="answer-all" type="button" value="Answer 1,2,3 and 4 equally"/>
             <input id="answer-1-and-one-2" type="button" value="Answer A and one B"/>
             <input id="answer-2-and-one-3" type="button" value="Answer B and one C"/>
