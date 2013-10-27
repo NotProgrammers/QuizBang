@@ -23,6 +23,7 @@ function nextQuestion() {
         window.quizMode = 'QUIZ';
         $('.user').removeClass('received');
         $('#intro').hide();
+        cycleQuestionBackgroundColors();
         $('#question').show();
         $('#question-instruction').visible();
         var question = new QuestionSelector().getNext();
@@ -98,6 +99,14 @@ function winScreen() {
         colors: new Array('#FFFFFF', '#BBBBBB')
     }));
     cycleBackgroundColors();
+}
+
+function cycleQuestionBackgroundColors() {
+    var colors = ["#ccffcc", "#ffcccc", "#ADD8E6"];
+    var i = 0;
+    while (i < colors.length) {
+        $("body").animate({ backgroundColor: colors[i++ % colors.length] }, 1000, cycleQuestionBackgroundColors);
+    }
 }
 
 function cycleBackgroundColors() {
