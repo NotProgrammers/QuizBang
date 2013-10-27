@@ -31,7 +31,7 @@
                 
                 // if no-one answers correctly, move to next question
                 if ($('.incorrect').length !== numberOfUsers) {
-                    $('.incorrect').animate({ opacity: 0 }, 1000, function () { $(this).remove(); });
+                    $('.incorrect').animate({ opacity: 0 }, 5000, function () { $(this).remove(); });
                     distributeUsers();
                 }
                 
