@@ -26,6 +26,7 @@ function nextQuestion() {
     }
     else if ($('.user').length === 1) {
         window.quizMode = 'WIN';
+        $('#intro').hide();
         $('#question').hide();
         $('#win-screen').show();
         var winnerName = $('.user span').html();
